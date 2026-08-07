@@ -1,0 +1,289 @@
+{
+  "cohort": {
+    "id": "c12",
+    "number": 12,
+    "label": "Cohort 12",
+    "seats": 300,
+    "applicationsCloseAt": "Sunday, 11:59 PM IST",
+    "previous": {
+      "number": 11,
+      "builders": 1284,
+      "currentDay": 41,
+      "stillLitPercent": 62,
+      "missedDays": [9, 22, 23],
+      "repairedDays": [15]
+    }
+  },
+
+  "tracks": [
+    { "id": "frontend", "name": "Frontend", "seatsLeft": 4, "blurb": "Interfaces people can actually use on a bad phone." },
+    { "id": "backend", "name": "Backend", "seatsLeft": 3, "blurb": "APIs, data models and the things that break at 2 AM." },
+    { "id": "data", "name": "Data & ML", "seatsLeft": 2, "blurb": "From a messy CSV to a model you can defend." },
+    { "id": "mobile", "name": "Mobile", "seatsLeft": 2, "blurb": "One app, sixty nights, shipped to a real device." },
+    { "id": "devops", "name": "DevOps", "seatsLeft": 5, "blurb": "Pipelines, containers and deploys that do not wake you up." }
+  ],
+
+  "graduates": [
+    {
+      "name": "Sneha R",
+      "detail": "3rd year, Coimbatore",
+      "shipped": 60,
+      "outcome": "Built 60 React components. Two recruiter conversations from the build log."
+    },
+    {
+      "name": "Imran K",
+      "detail": "2nd year, Hyderabad",
+      "shipped": 47,
+      "outcome": "Missed 13 days, finished anyway. First internship offer in March."
+    },
+    {
+      "name": "Divya M",
+      "detail": "final year, Pune",
+      "shipped": 31,
+      "outcome": "Dropped at day 31 for placements. Kept the 31 repos."
+    }
+  ],
+
+  "honesty": [
+    "This is not a job guarantee. Nobody is hiring you because of a streak.",
+    "There is no certificate. The repos and the posts are the certificate.",
+    "Budget 45 minutes a night. Most people quit because they planned for ten.",
+    "It is free. There is no paid tier and no upsell at day 30."
+  ],
+
+  "howItWorks": [
+    {
+      "title": "Pick a track",
+      "body": "Frontend, Backend, Data & ML, Mobile or DevOps. One track, 60 tasks, each sized for about 45 minutes."
+    },
+    {
+      "title": "Ship the proof, not the promise",
+      "body": "Each day closes with two things: a commit on GitHub and a post on LinkedIn. We draft the post for you from what you actually built."
+    },
+    {
+      "title": "Become findable",
+      "body": "Your build log becomes a public page. Recruiters search it by track, by stack, by consistency."
+    }
+  ],
+
+  "scenarios": {
+    "default": {
+      "id": "default",
+      "label": "Day 12, on streak",
+      "student": {
+        "name": "Aarav",
+        "initials": "AV",
+        "track": "frontend",
+        "currentDay": 12,
+        "streak": 11,
+        "longestStreak": 11,
+        "shipped": 11,
+        "missedDays": [],
+        "repairedDays": [],
+        "shields": 2,
+        "profileComplete": false,
+        "todayShipped": false,
+        "rank": 38,
+        "percentile": "Top 14%",
+        "usualShipTime": "11:20 PM",
+        "localTime": "Wednesday · 11:14 PM",
+        "closesIn": "2h 46m"
+      }
+    },
+
+    "fresh": {
+      "id": "fresh",
+      "label": "Day 1, no streak",
+      "student": {
+        "name": "Aarav",
+        "initials": "AV",
+        "track": "frontend",
+        "currentDay": 1,
+        "streak": 0,
+        "longestStreak": 0,
+        "shipped": 0,
+        "missedDays": [],
+        "repairedDays": [],
+        "shields": 0,
+        "profileComplete": false,
+        "todayShipped": false,
+        "rank": null,
+        "percentile": null,
+        "usualShipTime": null,
+        "localTime": "Monday · 10:41 PM · Night one",
+        "closesIn": null
+      }
+    },
+
+    "missed": {
+      "id": "missed",
+      "label": "Missed a day",
+      "student": {
+        "name": "Aarav",
+        "initials": "AV",
+        "track": "frontend",
+        "currentDay": 12,
+        "streak": 0,
+        "longestStreak": 10,
+        "shipped": 10,
+        "missedDays": [11],
+        "repairedDays": [],
+        "shields": 2,
+        "profileComplete": true,
+        "todayShipped": false,
+        "rank": 96,
+        "percentile": "Top 41%",
+        "usualShipTime": "11:20 PM",
+        "localTime": "Wednesday · 11:14 PM",
+        "closesIn": "2h 46m"
+      }
+    },
+
+    "shipped": {
+      "id": "shipped",
+      "label": "Already shipped today",
+      "student": {
+        "name": "Aarav",
+        "initials": "AV",
+        "track": "frontend",
+        "currentDay": 12,
+        "streak": 12,
+        "longestStreak": 12,
+        "shipped": 12,
+        "missedDays": [],
+        "repairedDays": [7],
+        "shields": 1,
+        "profileComplete": true,
+        "todayShipped": true,
+        "shippedAt": "11:02 PM",
+        "rank": 31,
+        "percentile": "Top 11%",
+        "usualShipTime": "11:20 PM",
+        "localTime": "Wednesday · 11:31 PM",
+        "closesIn": null
+      }
+    }
+  },
+
+  "shelf": [
+    { "day": 11, "title": "Toast queue with pause on hover", "meta": "React · 41 min · 3 reactions" },
+    { "day": 10, "title": "Accessible modal, no library", "meta": "React · 52 min · 17 reactions" },
+    { "day": 9, "title": "Debounced search with cancel", "meta": "React · 38 min · 6 reactions" },
+    { "day": 8, "title": "An accessible dropdown, no library", "meta": "React · 44 min · 2 reactions" },
+    { "day": 7, "title": "Dark mode with CSS variables", "meta": "CSS · 29 min · 9 reactions" }
+  ],
+
+  "days": [
+    { "day": 1, "title": "Ship one commit. Any size.", "brief": "Tonight only has to happen. The size of the commit is irrelevant.", "minutes": 20 },
+    { "day": 2, "title": "A button that handles every state", "brief": "Default, hover, focus, active, disabled, loading. Six states, one component.", "minutes": 40 },
+    { "day": 3, "title": "Centre a div three different ways", "brief": "Flexbox, grid and absolute positioning. Know which one to reach for.", "minutes": 30 },
+    { "day": 4, "title": "An input that validates as you type", "brief": "Feedback while typing, not after submitting. Do not shout at people mid-word.", "minutes": 45 },
+    { "day": 5, "title": "A responsive card grid with no media queries", "brief": "Let the grid do the work. Learn what auto-fit and minmax actually do.", "minutes": 40 },
+    { "day": 6, "title": "A loading skeleton that matches its content", "brief": "Same dimensions as the real thing, so nothing jumps when data arrives.", "minutes": 40 },
+    { "day": 7, "title": "Dark mode with CSS variables", "brief": "One set of tokens, two themes, no duplicated stylesheet.", "minutes": 45 },
+    { "day": 8, "title": "An accessible dropdown, no library", "brief": "Arrow keys, escape to close, focus returns to the trigger.", "minutes": 50 },
+    { "day": 9, "title": "Debounced search with cancel", "brief": "Stop firing a request on every keystroke, and cancel the ones in flight.", "minutes": 45 },
+    { "day": 10, "title": "An accessible modal, no library", "brief": "Focus trap, escape to close, background does not scroll.", "minutes": 50 },
+    {
+      "day": 11,
+      "title": "A toast queue that pauses on hover",
+      "brief": "Three toasts at once should stack, not overlap. Hovering should stop the timer.",
+      "minutes": 45,
+      "why": "Notifications are where beginners discover that timers and React state disagree.",
+      "build": "A useToast hook and a Toaster component that can show up to three stacked messages.",
+      "doneWhen": [
+        "Toasts stack rather than overlapping.",
+        "Hovering any toast pauses its dismiss timer.",
+        "Dismissing one does not reset the others.",
+        "A screen reader announces the message."
+      ],
+      "stretch": "Add a swipe-to-dismiss gesture on touch devices.",
+      "hint": "Store the remaining time, not the elapsed time. Pausing is then just declining to tick."
+    },
+    {
+      "day": 12,
+      "title": "Make a component that survives bad data",
+      "brief": "Build a profile card that renders correctly when the name, avatar and bio are all missing. Empty states are the whole task.",
+      "minutes": 45,
+      "why": "Real APIs return nulls. Most student portfolios break the moment a field is missing, and that is exactly what an interviewer will click on first.",
+      "build": "A ProfileCard component that takes one user object and renders sensibly no matter what is inside it.",
+      "doneWhen": [
+        "Missing avatar falls back to initials, never a broken image icon.",
+        "Missing name shows a neutral label, not \"undefined\".",
+        "Bio longer than 140 characters truncates without breaking layout.",
+        "Card holds its height across all four cases so the page does not jump.",
+        "Renders correctly at 390px wide."
+      ],
+      "stretch": "Add a loading skeleton that matches the card's exact dimensions.",
+      "hint": "Start from the worst case, not the best one. Write the component with an empty object first, then add fields back in.",
+      "draftPosts": [
+        "Day 12 of 60.\n\nBuilt a profile card that does not fall apart when the data is missing: no avatar, no name, no bio, still renders clean and holds its height.\n\nEmpty states are boring to build and obvious when they are absent. Learned that the hard way tonight.\n\nReact · #60DaysOfBuilding #ABTalks",
+        "Day 12 of 60.\n\nToday's lesson: undefined is a design problem, not a bug. Built a profile card that stays intact with no avatar, no name and no bio.\n\nFallback initials, truncated bio, fixed height so nothing jumps.\n\nReact · #60DaysOfBuilding #ABTalks",
+        "Day 12 of 60.\n\nSpent 45 minutes on empty states. A profile card that renders the same whether the API gives me everything or nothing.\n\nNobody notices this work until it is missing.\n\nReact · #60DaysOfBuilding #ABTalks"
+      ]
+    },
+    {
+      "day": 13,
+      "title": "Infinite scroll that does not leak memory",
+      "brief": "Load more as you scroll, and clean up after yourself when the component unmounts.",
+      "minutes": 50,
+      "why": "Every feed you have ever used does this, and almost every first attempt leaks an observer.",
+      "build": "A list that loads the next page when a sentinel element enters the viewport.",
+      "doneWhen": [
+        "New items load before the user hits the bottom.",
+        "The observer disconnects on unmount.",
+        "A loading row appears while fetching, not a full-page spinner.",
+        "Reaching the end shows an explicit end-of-list message."
+      ],
+      "stretch": "Add a manual Load more button for people who use keyboards.",
+      "hint": "IntersectionObserver on a sentinel div is simpler than listening to scroll events."
+    },
+    { "day": 14, "title": "A date picker for one hand", "brief": "Assume a thumb, a 390px screen and no patience.", "minutes": 55 },
+    { "day": 15, "title": "Optimistic UI with rollback", "brief": "Show the result immediately, undo it cleanly when the request fails.", "minutes": 50 },
+    { "day": 16, "title": "A virtualised list of 10,000 rows", "brief": "Render only what is visible. Learn why the DOM is the bottleneck.", "minutes": 55 },
+    { "day": 17, "title": "Drag to reorder, keyboard accessible", "brief": "If it only works with a mouse, it does not work.", "minutes": 55 },
+    { "day": 18, "title": "A tab component that syncs to the URL", "brief": "Refreshing the page should keep the tab you were on.", "minutes": 40 },
+    { "day": 19, "title": "Copy to clipboard with real feedback", "brief": "The button text should change, and change back.", "minutes": 25 },
+    { "day": 20, "title": "An image with a blur-up placeholder", "brief": "No layout shift, no white flash, works on a slow connection.", "minutes": 40 },
+    { "day": 21, "title": "A multi-step form that survives a refresh", "brief": "Losing four steps of input to an accidental reload is a design failure.", "minutes": 55 },
+    { "day": 22, "title": "Empty, loading, error and success in one component", "brief": "Four states, one component, no copy-pasted markup.", "minutes": 45 },
+    { "day": 23, "title": "A tooltip that never leaves the viewport", "brief": "Flip it when it would be cut off. Test it in the corner.", "minutes": 45 },
+    { "day": 24, "title": "Client-side routing without a router", "brief": "Understand the History API before you let a library hide it.", "minutes": 50 },
+    { "day": 25, "title": "Form validation that reads like a human", "brief": "Say what is wrong and how to fix it. Never just \"invalid input\".", "minutes": 40 },
+    { "day": 26, "title": "Undo and redo for a text field", "brief": "A small state machine, and your first taste of command patterns.", "minutes": 50 },
+    { "day": 27, "title": "A chart with no chart library", "brief": "SVG, some maths, and a lot less bundle weight.", "minutes": 55 },
+    { "day": 28, "title": "Keyboard shortcuts that do not fight the browser", "brief": "Do not steal Ctrl+F. Learn which keys are yours.", "minutes": 40 },
+    { "day": 29, "title": "A focus trap for an overlay", "brief": "Tab should cycle inside the overlay and nowhere else.", "minutes": 45 },
+    { "day": 30, "title": "Halfway. Refactor your day 12 card.", "brief": "Open the thing you built on day 12 and make it better. Note what you now see.", "minutes": 45 },
+    { "day": 31, "title": "File upload with drag, drop and progress", "brief": "Three states and a real progress number, not a fake spinner.", "minutes": 55 },
+    { "day": 32, "title": "Pagination that keeps scroll position", "brief": "Going back should not send the user to the top of the page.", "minutes": 40 },
+    { "day": 33, "title": "A search that highlights matches", "brief": "Highlight without breaking the markup or the accessibility tree.", "minutes": 45 },
+    { "day": 34, "title": "Filter chips with a clear-all", "brief": "Multiple filters, visible state, one way out.", "minutes": 40 },
+    { "day": 35, "title": "A comment thread that nests three deep", "brief": "Recursion in components, and the point where indentation stops working on mobile.", "minutes": 50 },
+    { "day": 36, "title": "A sticky header that hides on scroll down", "brief": "Reveal on scroll up. Get the thresholds right or it feels broken.", "minutes": 45 },
+    { "day": 37, "title": "Skeleton to content with no layout shift", "brief": "Measure your CLS before and after. Numbers, not vibes.", "minutes": 45 },
+    { "day": 38, "title": "A settings page that saves on change", "brief": "No save button. Show what saved and when.", "minutes": 45 },
+    { "day": 39, "title": "An offline banner and a retry queue", "brief": "Patchy 4G is the default condition, not the edge case.", "minutes": 55 },
+    { "day": 40, "title": "A stepper that shows real progress", "brief": "Steps behind, current step, steps ahead. Honest about what remains.", "minutes": 40 },
+    { "day": 41, "title": "A sortable table with a mobile fallback", "brief": "Tables do not fit at 390px. Decide what they become instead.", "minutes": 55 },
+    { "day": 42, "title": "A password field with honest strength feedback", "brief": "Say what would make it stronger, not just \"weak\".", "minutes": 40 },
+    { "day": 43, "title": "A carousel that works with swipe and keyboard", "brief": "The most-hated component on the web. Build a good one.", "minutes": 55 },
+    { "day": 44, "title": "Toast, modal and focus, all together", "brief": "Three things you have built separately, now competing for the same focus.", "minutes": 50 },
+    { "day": 45, "title": "Rate limit feedback a user understands", "brief": "Not \"429\". Say how long to wait and why.", "minutes": 35 },
+    { "day": 46, "title": "A calendar month view at 390px", "brief": "Seven columns on a narrow screen. Something has to give.", "minutes": 55 },
+    { "day": 47, "title": "A bottom sheet with drag to dismiss", "brief": "The mobile pattern people actually reach for.", "minutes": 55 },
+    { "day": 48, "title": "A command palette with fuzzy search", "brief": "Cmd+K. Keyboard-first, and it should feel instant.", "minutes": 55 },
+    { "day": 49, "title": "A diff view for two strings", "brief": "Show what changed, character by character.", "minutes": 50 },
+    { "day": 50, "title": "Animate a list add and remove", "brief": "Items should not pop in and out. Respect reduced motion.", "minutes": 45 },
+    { "day": 51, "title": "A form that tells you what changed", "brief": "Highlight dirty fields and warn before discarding them.", "minutes": 45 },
+    { "day": 52, "title": "A print stylesheet for a receipt", "brief": "Nobody does this. It takes 30 minutes and it always impresses.", "minutes": 35 },
+    { "day": 53, "title": "An error boundary that is actually useful", "brief": "Tell the user what broke and give them a way forward.", "minutes": 40 },
+    { "day": 54, "title": "A theme switcher that respects system preference", "brief": "Three states: light, dark, and whatever the system says.", "minutes": 40 },
+    { "day": 55, "title": "Reduce your bundle by 30 percent", "brief": "Measure first. Then delete something.", "minutes": 50 },
+    { "day": 56, "title": "Audit one page for accessibility", "brief": "Keyboard only, then screen reader. Write down every failure.", "minutes": 50 },
+    { "day": 57, "title": "A profile page built from your own build log", "brief": "Use your 56 days of commits as the data source.", "minutes": 55 },
+    { "day": 58, "title": "A landing page for the thing you built", "brief": "Explain your best project to someone who has never seen it.", "minutes": 55 },
+    { "day": 59, "title": "Write the README you wish you had", "brief": "Go back to day 1 and document it properly.", "minutes": 40 },
+    { "day": 60, "title": "Ship your build log and post the recap", "brief": "Sixty repos, one page, one honest post about what changed.", "minutes": 60 }
+  ]
+}
