@@ -1,33 +1,33 @@
 /*
  * TallyStrip
  *
- * The signature element of the redesign. Sixty marks, one per night, read
- * like a tally scratched on a hostel wall. It replaces the GitHub-style
- * contribution grid, which reads as a heatmap of activity rather than a
- * record of nights kept.
+ * The signature element. Sixty marks, one per night, read like a tally
+ * scratched on a hostel wall. It replaces the GitHub-style contribution grid,
+ * which shows activity volume. This challenge is not about volume, it is
+ * about whether you kept the night.
  *
- * Every mark encodes real state, nothing here is decorative:
- *   lit       shipped
- *   dark      the night went dark
- *   repaired  recovered with a shield
- *   now       tonight, still open, the only animated mark
- *   ahead     not reached yet
+ * Every mark encodes real state, nothing is decorative:
+ *   lit       shipped, blue
+ *   dark      the night went dark, drawn as a short ink mark
+ *   repaired  recovered with a shield, green
+ *   now       tonight, pink, the only animated mark on the page
+ *   ahead     not reached yet, pale
  *
- * The same component appears on all three routes at three sizes. One device,
- * three contexts, so a student learns to read it once.
+ * The same component appears on all three routes at two sizes, so a student
+ * learns to read it once.
  */
 
 const HEIGHTS = {
-  sm: { base: 8, lit: 14, dark: 5, repaired: 11, now: 22 },
-  md: { base: 11, lit: 19, dark: 7, repaired: 15, now: 30 },
+  sm: { ahead: 8, lit: 15, dark: 6, repaired: 12, now: 24 },
+  md: { ahead: 11, lit: 20, dark: 8, repaired: 16, now: 32 },
 };
 
 const COLORS = {
-  lit: "var(--lamp)",
-  dark: "var(--dark)",
-  repaired: "var(--ship)",
-  now: "var(--lamp)",
-  ahead: "var(--lamp-dim)",
+  lit: "var(--blue)",
+  dark: "var(--ink)",
+  repaired: "var(--green)",
+  now: "var(--pink)",
+  ahead: "var(--ahead)",
 };
 
 export default function TallyStrip({ marks, size = "md", className = "" }) {
@@ -55,53 +55,36 @@ export default function TallyStrip({ marks, size = "md", className = "" }) {
       className={`flex items-end gap-[2px] ${className}`}
       style={{ height: h.now + 4 }}
     >
-      {marks.map((mark, i) => {
-        const height =
-          mark === "now"
-            ? h.now
-            : mark === "lit"
-              ? h.lit
-              : mark === "dark"
-                ? h.dark
-                : mark === "repaired"
-                  ? h.repaired
-                  : h.base;
-
-        return (
-          <span
-            key={i}
-            aria-hidden="true"
-            className={`block w-[3px] rounded-sm ${
-              mark === "now" ? "animate-breathe" : ""
-            }`}
-            style={{
-              height,
-              background: COLORS[mark],
-              opacity: mark === "ahead" ? 0.55 : 1,
-            }}
-          />
-        );
-      })}
+      {marks.map((mark, i) => (
+        <span
+          key={i}
+          aria-hidden="true"
+          className={`block w-[3px] rounded-[1px] origin-bottom ${
+            mark === "now" ? "animate-pop" : ""
+          }`}
+          style={{ height: h[mark] ?? h.ahead, background: COLORS[mark] }}
+        />
+      ))}
     </div>
   );
 }
 
-/** Legend for the strip. Shown on the dashboard only, where the states matter. */
+/** Legend. Shown on the dashboard only, where all five states can occur. */
 export function TallyKey() {
   const items = [
-    ["lit", "var(--lamp)"],
-    ["dark", "var(--dark)"],
-    ["repaired", "var(--ship)"],
-    ["ahead", "var(--lamp-dim)"],
+    ["shipped", "var(--blue)"],
+    ["tonight", "var(--pink)"],
+    ["dark", "var(--ink)"],
+    ["repaired", "var(--green)"],
   ];
 
   return (
-    <ul className="mt-1 flex gap-3 font-mono text-[9.5px] tracking-wide text-muted-2">
+    <ul className="mt-2 flex flex-wrap gap-x-3 gap-y-1 font-mono text-[9.5px] uppercase tracking-wider text-ink-faint">
       {items.map(([label, color]) => (
         <li key={label} className="flex items-center gap-1">
           <span
             aria-hidden="true"
-            className="inline-block h-[6px] w-[6px] rounded-sm"
+            className="inline-block h-[7px] w-[3px] rounded-[1px]"
             style={{ background: color }}
           />
           {label}

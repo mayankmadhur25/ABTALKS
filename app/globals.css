@@ -3,78 +3,93 @@
 @tailwind utilities;
 
 /*
- * Design tokens.
+ * Design tokens: screenprint.
  *
- * The palette is built for the actual context of use: a student on a phone,
- * late at night, after college. Deep ink blue rather than pure black, with a
- * warm lamp amber as the only bright colour. On any screen exactly one thing
- * is lit, and that thing is tonight's task.
+ * Bright paper, flat saturated inks, hard borders and offset shadows. The
+ * reference is a college noticeboard and a riso-printed event poster, not a
+ * dashboard. This is a challenge a 20 year old should want to be seen doing.
  *
- * Green is reserved strictly for a confirmed submission. Rust is reserved
- * strictly for a night that went dark. Neither appears decoratively.
+ * Discipline: five colours, each with exactly one job. Nothing is used
+ * decoratively.
+ *   blue    actions, links, nights shipped
+ *   pink    tonight, and only tonight
+ *   yellow  the task in front of you, and earned things
+ *   green   a confirmed submission
+ *   ink     a night that went dark, drawn as an actually dark mark
  */
 
 :root {
-  --ink: #0e1119;
-  --ink-2: #151a26;
-  --surface: #1b2130;
-  --surface-2: #222a3c;
-  --line: #2a3143;
+  --paper: #f4f4f1;
+  --card: #ffffff;
 
-  --paper: #ece7de;
-  --muted: #8e97ab;
-  --muted-2: #5e6880;
+  --ink: #16161f;
+  --ink-soft: #5a5b6a;
+  --ink-faint: #9a9bab;
+  --line: #e3e3dd;
 
-  --lamp: #ffb454;
-  --lamp-deep: #e0912b;
-  --lamp-dim: #5c4425;
+  --blue: #2b4bff;
+  --blue-deep: #1c33bd;
+  --pink: #ff3d8b;
+  --yellow: #ffd23f;
+  --green: #00b87c;
 
-  --ship: #56d9a3;
-  --dark: #e0674f;
+  --ahead: #d8d8d2;
 }
 
 @layer base {
   html,
   body {
-    background: var(--ink);
-    color: var(--paper);
-    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Instrument Sans", system-ui, sans-serif;
   }
 
-  /* Visible keyboard focus everywhere, never removed. */
   :focus-visible {
-    outline: 2px solid var(--lamp);
+    outline: 3px solid var(--blue);
     outline-offset: 2px;
     border-radius: 4px;
   }
 
-  /* Tabular numerals so streak counts do not jitter as they change. */
   .tabular {
     font-variant-numeric: tabular-nums;
   }
 }
 
 @layer components {
+  /*
+   * The hard offset shadow is the signature texture: a printed sticker
+   * sitting slightly off the page. Used only on things you can act on, so
+   * it always means "this is live", never "this is a box".
+   */
+  .press {
+    border: 1.5px solid var(--ink);
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+
+  .press-lg {
+    border: 2px solid var(--ink);
+    box-shadow: 5px 5px 0 var(--ink);
+  }
+
   .eyebrow {
-    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-family: "DM Mono", ui-monospace, monospace;
     font-size: 10.5px;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     font-weight: 500;
-    color: var(--lamp);
+    color: var(--blue);
   }
 
   .eyebrow-quiet {
-    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-family: "DM Mono", ui-monospace, monospace;
     font-size: 10px;
     letter-spacing: 0.13em;
     text-transform: uppercase;
     font-weight: 500;
-    color: var(--muted-2);
+    color: var(--ink-faint);
   }
 }
 
-/* Reduced motion is respected globally, not per component. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
