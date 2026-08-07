@@ -2,8 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  background: #0e1119;
-  color: #ece7de;
+/*
+ * Design tokens.
+ *
+ * The palette is built for the actual context of use: a student on a phone,
+ * late at night, after college. Deep ink blue rather than pure black, with a
+ * warm lamp amber as the only bright colour. On any screen exactly one thing
+ * is lit, and that thing is tonight's task.
+ *
+ * Green is reserved strictly for a confirmed submission. Rust is reserved
+ * strictly for a night that went dark. Neither appears decoratively.
+ */
+
+:root {
+  --ink: #0e1119;
+  --ink-2: #151a26;
+  --surface: #1b2130;
+  --surface-2: #222a3c;
+  --line: #2a3143;
+
+  --paper: #ece7de;
+  --muted: #8e97ab;
+  --muted-2: #5e6880;
+
+  --lamp: #ffb454;
+  --lamp-deep: #e0912b;
+  --lamp-dim: #5c4425;
+
+  --ship: #56d9a3;
+  --dark: #e0674f;
+}
+
+@layer base {
+  html,
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+  }
+
+  /* Visible keyboard focus everywhere, never removed. */
+  :focus-visible {
+    outline: 2px solid var(--lamp);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Tabular numerals so streak counts do not jitter as they change. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--lamp);
+  }
+
+  .eyebrow-quiet {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--muted-2);
+  }
+}
+
+/* Reduced motion is respected globally, not per component. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
