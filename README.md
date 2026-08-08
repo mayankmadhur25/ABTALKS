@@ -19,10 +19,11 @@ See [AI-USAGE-LOG.md](./AI-USAGE-LOG.md).
 
 All three are designed at 390px first.
 
-Desktop is a secondary consideration, handled as such. Rather than stretching a
-phone layout across 1400px, the column is presented as what it is: a printed
-sheet, bordered and offset against a darker ground, with a standing rail beside
-it carrying the route map and the thesis. Nothing below 1024px changes.
+Desktop is a secondary consideration, handled as one. Nothing below 1024px
+changes. Above it the column becomes a bordered sheet with a navigation rail
+beside it, which is what a desktop application looks like anyway. Nothing is
+stretched, and nothing in the interface is addressed to anyone except a student
+using the product.
 
 ## Run it
 
