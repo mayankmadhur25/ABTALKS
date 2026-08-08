@@ -10,19 +10,48 @@
       "builders": 1284,
       "currentDay": 41,
       "stillLitPercent": 62,
-      "missedDays": [9, 22, 23],
-      "repairedDays": [15]
+      "missedDays": [
+        9,
+        22,
+        23
+      ],
+      "repairedDays": [
+        15
+      ]
     }
   },
-
   "tracks": [
-    { "id": "frontend", "name": "Frontend", "seatsLeft": 4, "blurb": "Interfaces people can actually use on a bad phone." },
-    { "id": "backend", "name": "Backend", "seatsLeft": 3, "blurb": "APIs, data models and the things that break at 2 AM." },
-    { "id": "data", "name": "Data & ML", "seatsLeft": 2, "blurb": "From a messy CSV to a model you can defend." },
-    { "id": "mobile", "name": "Mobile", "seatsLeft": 2, "blurb": "One app, sixty nights, shipped to a real device." },
-    { "id": "devops", "name": "DevOps", "seatsLeft": 5, "blurb": "Pipelines, containers and deploys that do not wake you up." }
+    {
+      "id": "frontend",
+      "name": "Frontend",
+      "seatsLeft": 4,
+      "blurb": "Interfaces people can actually use on a bad phone."
+    },
+    {
+      "id": "backend",
+      "name": "Backend",
+      "seatsLeft": 3,
+      "blurb": "APIs, data models and the things that break at 2 AM."
+    },
+    {
+      "id": "data",
+      "name": "Data & ML",
+      "seatsLeft": 2,
+      "blurb": "From a messy CSV to a model you can defend."
+    },
+    {
+      "id": "mobile",
+      "name": "Mobile",
+      "seatsLeft": 2,
+      "blurb": "One app, sixty nights, shipped to a real device."
+    },
+    {
+      "id": "devops",
+      "name": "DevOps",
+      "seatsLeft": 5,
+      "blurb": "Pipelines, containers and deploys that do not wake you up."
+    }
   ],
-
   "graduates": [
     {
       "name": "Sneha R",
@@ -43,14 +72,12 @@
       "outcome": "Dropped at day 31 for placements. Kept the 31 repos."
     }
   ],
-
   "honesty": [
     "This is not a job guarantee. Nobody is hiring you because of a streak.",
     "There is no certificate. The repos and the posts are the certificate.",
     "Budget 45 minutes a night. Most people quit because they planned for ten.",
     "It is free. There is no paid tier and no upsell at day 30."
   ],
-
   "howItWorks": [
     {
       "title": "Pick a track",
@@ -65,7 +92,6 @@
       "body": "Your build log becomes a public page. Recruiters search it by track, by stack, by consistency."
     }
   ],
-
   "scenarios": {
     "default": {
       "id": "default",
@@ -90,7 +116,6 @@
         "closesIn": "2h 46m"
       }
     },
-
     "fresh": {
       "id": "fresh",
       "label": "Day 1, no streak",
@@ -114,7 +139,6 @@
         "closesIn": null
       }
     },
-
     "missed": {
       "id": "missed",
       "label": "Missed a day",
@@ -126,7 +150,9 @@
         "streak": 0,
         "longestStreak": 10,
         "shipped": 10,
-        "missedDays": [11],
+        "missedDays": [
+          11
+        ],
         "repairedDays": [],
         "shields": 2,
         "profileComplete": true,
@@ -138,7 +164,6 @@
         "closesIn": "2h 46m"
       }
     },
-
     "shipped": {
       "id": "shipped",
       "label": "Already shipped today",
@@ -151,7 +176,9 @@
         "longestStreak": 12,
         "shipped": 12,
         "missedDays": [],
-        "repairedDays": [7],
+        "repairedDays": [
+          7
+        ],
         "shields": 1,
         "profileComplete": true,
         "todayShipped": true,
@@ -164,26 +191,192 @@
       }
     }
   },
-
   "shelf": [
-    { "day": 11, "title": "Toast queue with pause on hover", "meta": "React · 41 min · 3 reactions" },
-    { "day": 10, "title": "Accessible modal, no library", "meta": "React · 52 min · 17 reactions" },
-    { "day": 9, "title": "Debounced search with cancel", "meta": "React · 38 min · 6 reactions" },
-    { "day": 8, "title": "An accessible dropdown, no library", "meta": "React · 44 min · 2 reactions" },
-    { "day": 7, "title": "Dark mode with CSS variables", "meta": "CSS · 29 min · 9 reactions" }
+    {
+      "day": 11,
+      "title": "Toast queue with pause on hover",
+      "meta": "React · 41 min · 3 reactions"
+    },
+    {
+      "day": 10,
+      "title": "Accessible modal, no library",
+      "meta": "React · 52 min · 17 reactions"
+    },
+    {
+      "day": 9,
+      "title": "Debounced search with cancel",
+      "meta": "React · 38 min · 6 reactions"
+    },
+    {
+      "day": 8,
+      "title": "An accessible dropdown, no library",
+      "meta": "React · 44 min · 2 reactions"
+    },
+    {
+      "day": 7,
+      "title": "Dark mode with CSS variables",
+      "meta": "CSS · 29 min · 9 reactions"
+    }
   ],
-
   "days": [
-    { "day": 1, "title": "Ship one commit. Any size.", "brief": "Tonight only has to happen. The size of the commit is irrelevant.", "minutes": 20 },
-    { "day": 2, "title": "A button that handles every state", "brief": "Default, hover, focus, active, disabled, loading. Six states, one component.", "minutes": 40 },
-    { "day": 3, "title": "Centre a div three different ways", "brief": "Flexbox, grid and absolute positioning. Know which one to reach for.", "minutes": 30 },
-    { "day": 4, "title": "An input that validates as you type", "brief": "Feedback while typing, not after submitting. Do not shout at people mid-word.", "minutes": 45 },
-    { "day": 5, "title": "A responsive card grid with no media queries", "brief": "Let the grid do the work. Learn what auto-fit and minmax actually do.", "minutes": 40 },
-    { "day": 6, "title": "A loading skeleton that matches its content", "brief": "Same dimensions as the real thing, so nothing jumps when data arrives.", "minutes": 40 },
-    { "day": 7, "title": "Dark mode with CSS variables", "brief": "One set of tokens, two themes, no duplicated stylesheet.", "minutes": 45 },
-    { "day": 8, "title": "An accessible dropdown, no library", "brief": "Arrow keys, escape to close, focus returns to the trigger.", "minutes": 50 },
-    { "day": 9, "title": "Debounced search with cancel", "brief": "Stop firing a request on every keystroke, and cancel the ones in flight.", "minutes": 45 },
-    { "day": 10, "title": "An accessible modal, no library", "brief": "Focus trap, escape to close, background does not scroll.", "minutes": 50 },
+    {
+      "day": 1,
+      "title": "Ship one commit. Any size.",
+      "brief": "Tonight only has to happen. The size of the commit is irrelevant.",
+      "minutes": 20,
+      "why": "Night one only has to happen. Everything else is built on the fact that you started.",
+      "build": "Any repo, any commit. A single README counts.",
+      "doneWhen": [
+        "A public repo exists with your name on it.",
+        "At least one commit is pushed.",
+        "The README says what you intend to build over 60 nights."
+      ],
+      "stretch": "Add a plan for what you want to have built by day 60.",
+      "hint": "Do not design tonight. Just push something and go to sleep."
+    },
+    {
+      "day": 2,
+      "title": "A button that handles every state",
+      "brief": "Default, hover, focus, active, disabled, loading. Six states, one component.",
+      "minutes": 40,
+      "why": "Six states is the difference between a button and a control people trust.",
+      "build": "One Button component covering default, hover, focus, active, disabled and loading.",
+      "doneWhen": [
+        "All six states are visibly distinct.",
+        "Focus is visible without a mouse.",
+        "Disabled cannot be clicked or tabbed into.",
+        "Loading keeps the button width steady."
+      ],
+      "stretch": "Add a variant prop for primary, secondary and danger.",
+      "hint": "Build the loading state first. It is the one that changes the layout."
+    },
+    {
+      "day": 3,
+      "title": "Centre a div three different ways",
+      "brief": "Flexbox, grid and absolute positioning. Know which one to reach for.",
+      "minutes": 30,
+      "why": "Knowing three ways means you pick the right one instead of the one you remember.",
+      "build": "The same box centred with flexbox, with grid, and with absolute positioning.",
+      "doneWhen": [
+        "All three are horizontally and vertically centred.",
+        "Each works when the box changes size.",
+        "You wrote a comment on when to use each."
+      ],
+      "stretch": "Add a fourth using only margin auto and see where it fails.",
+      "hint": "Try each one with a box whose height you do not know."
+    },
+    {
+      "day": 4,
+      "title": "An input that validates as you type",
+      "brief": "Feedback while typing, not after submitting. Do not shout at people mid-word.",
+      "minutes": 45,
+      "why": "Feedback after submitting is a punishment. Feedback while typing is help.",
+      "build": "A text input that validates as the user types, without shouting mid-word.",
+      "doneWhen": [
+        "No error shows until the field is left or clearly wrong.",
+        "The message says how to fix it, not just what failed.",
+        "Valid state is shown, not only invalid.",
+        "The error is announced to a screen reader."
+      ],
+      "stretch": "Add a debounce so validation does not fire on every keystroke.",
+      "hint": "Do not validate an email until it contains an at sign."
+    },
+    {
+      "day": 5,
+      "title": "A responsive card grid with no media queries",
+      "brief": "Let the grid do the work. Learn what auto-fit and minmax actually do.",
+      "minutes": 40,
+      "why": "Media queries are a blunt tool. The grid can do this by itself.",
+      "build": "A card grid that reflows from one column to four with no breakpoints.",
+      "doneWhen": [
+        "Reflows smoothly from 320px to 1400px.",
+        "No media queries in the CSS.",
+        "Cards keep a sensible minimum width.",
+        "Last row does not stretch oddly."
+      ],
+      "stretch": "Make the first card span two columns when there is room.",
+      "hint": "Look up grid-template-columns with repeat, auto-fit and minmax."
+    },
+    {
+      "day": 6,
+      "title": "A loading skeleton that matches its content",
+      "brief": "Same dimensions as the real thing, so nothing jumps when data arrives.",
+      "minutes": 40,
+      "why": "A spinner tells you nothing. A skeleton tells you what is coming.",
+      "build": "A skeleton that matches the exact dimensions of the content it replaces.",
+      "doneWhen": [
+        "Skeleton and content have identical height.",
+        "Nothing shifts when the real content arrives.",
+        "The shimmer respects reduced motion.",
+        "Screen readers announce loading, not the fake text."
+      ],
+      "stretch": "Derive the skeleton from the real component so they cannot drift.",
+      "hint": "Screenshot both states and flip between them. Any jump is a bug."
+    },
+    {
+      "day": 7,
+      "title": "Dark mode with CSS variables",
+      "brief": "One set of tokens, two themes, no duplicated stylesheet.",
+      "minutes": 45,
+      "why": "One set of tokens, two themes. Duplicating a stylesheet is how themes rot.",
+      "build": "A dark mode built entirely on CSS custom properties.",
+      "doneWhen": [
+        "One variable set, overridden in one place.",
+        "No duplicated colour values.",
+        "The choice survives a page refresh.",
+        "Both themes pass contrast checks."
+      ],
+      "stretch": "Add a third theme in under five minutes to prove the structure works.",
+      "hint": "If you are writing a colour twice, you need another variable."
+    },
+    {
+      "day": 8,
+      "title": "An accessible dropdown, no library",
+      "brief": "Arrow keys, escape to close, focus returns to the trigger.",
+      "minutes": 50,
+      "why": "Dropdowns are where accessibility usually dies quietly.",
+      "build": "A select-style dropdown with no library.",
+      "doneWhen": [
+        "Arrow keys move between options.",
+        "Escape closes and returns focus to the trigger.",
+        "Clicking outside closes it.",
+        "The trigger announces the selected value."
+      ],
+      "stretch": "Add type-ahead so pressing a letter jumps to that option.",
+      "hint": "Build it keyboard-first. Add the mouse afterwards."
+    },
+    {
+      "day": 9,
+      "title": "Debounced search with cancel",
+      "brief": "Stop firing a request on every keystroke, and cancel the ones in flight.",
+      "minutes": 45,
+      "why": "Firing a request per keystroke is how you get rate limited on day one.",
+      "build": "A search box that debounces input and cancels requests in flight.",
+      "doneWhen": [
+        "No request fires until typing pauses.",
+        "Older requests are cancelled, not just ignored.",
+        "Results never arrive out of order.",
+        "Clearing the box clears the results."
+      ],
+      "stretch": "Show a subtle indicator while a request is in flight.",
+      "hint": "AbortController is the piece most people skip."
+    },
+    {
+      "day": 10,
+      "title": "An accessible modal, no library",
+      "brief": "Focus trap, escape to close, background does not scroll.",
+      "minutes": 50,
+      "why": "A modal that traps focus badly is worse than no modal.",
+      "build": "An accessible modal with no library.",
+      "doneWhen": [
+        "Focus moves into the modal on open.",
+        "Tab cycles inside it and nowhere else.",
+        "Escape closes it and restores focus.",
+        "The page behind does not scroll."
+      ],
+      "stretch": "Add a confirm variant that returns a promise.",
+      "hint": "Store the element that had focus before opening. You need it on close."
+    },
     {
       "day": 11,
       "title": "A toast queue that pauses on hover",
@@ -238,52 +431,757 @@
       "stretch": "Add a manual Load more button for people who use keyboards.",
       "hint": "IntersectionObserver on a sentinel div is simpler than listening to scroll events."
     },
-    { "day": 14, "title": "A date picker for one hand", "brief": "Assume a thumb, a 390px screen and no patience.", "minutes": 55 },
-    { "day": 15, "title": "Optimistic UI with rollback", "brief": "Show the result immediately, undo it cleanly when the request fails.", "minutes": 50 },
-    { "day": 16, "title": "A virtualised list of 10,000 rows", "brief": "Render only what is visible. Learn why the DOM is the bottleneck.", "minutes": 55 },
-    { "day": 17, "title": "Drag to reorder, keyboard accessible", "brief": "If it only works with a mouse, it does not work.", "minutes": 55 },
-    { "day": 18, "title": "A tab component that syncs to the URL", "brief": "Refreshing the page should keep the tab you were on.", "minutes": 40 },
-    { "day": 19, "title": "Copy to clipboard with real feedback", "brief": "The button text should change, and change back.", "minutes": 25 },
-    { "day": 20, "title": "An image with a blur-up placeholder", "brief": "No layout shift, no white flash, works on a slow connection.", "minutes": 40 },
-    { "day": 21, "title": "A multi-step form that survives a refresh", "brief": "Losing four steps of input to an accidental reload is a design failure.", "minutes": 55 },
-    { "day": 22, "title": "Empty, loading, error and success in one component", "brief": "Four states, one component, no copy-pasted markup.", "minutes": 45 },
-    { "day": 23, "title": "A tooltip that never leaves the viewport", "brief": "Flip it when it would be cut off. Test it in the corner.", "minutes": 45 },
-    { "day": 24, "title": "Client-side routing without a router", "brief": "Understand the History API before you let a library hide it.", "minutes": 50 },
-    { "day": 25, "title": "Form validation that reads like a human", "brief": "Say what is wrong and how to fix it. Never just \"invalid input\".", "minutes": 40 },
-    { "day": 26, "title": "Undo and redo for a text field", "brief": "A small state machine, and your first taste of command patterns.", "minutes": 50 },
-    { "day": 27, "title": "A chart with no chart library", "brief": "SVG, some maths, and a lot less bundle weight.", "minutes": 55 },
-    { "day": 28, "title": "Keyboard shortcuts that do not fight the browser", "brief": "Do not steal Ctrl+F. Learn which keys are yours.", "minutes": 40 },
-    { "day": 29, "title": "A focus trap for an overlay", "brief": "Tab should cycle inside the overlay and nowhere else.", "minutes": 45 },
-    { "day": 30, "title": "Halfway. Refactor your day 12 card.", "brief": "Open the thing you built on day 12 and make it better. Note what you now see.", "minutes": 45 },
-    { "day": 31, "title": "File upload with drag, drop and progress", "brief": "Three states and a real progress number, not a fake spinner.", "minutes": 55 },
-    { "day": 32, "title": "Pagination that keeps scroll position", "brief": "Going back should not send the user to the top of the page.", "minutes": 40 },
-    { "day": 33, "title": "A search that highlights matches", "brief": "Highlight without breaking the markup or the accessibility tree.", "minutes": 45 },
-    { "day": 34, "title": "Filter chips with a clear-all", "brief": "Multiple filters, visible state, one way out.", "minutes": 40 },
-    { "day": 35, "title": "A comment thread that nests three deep", "brief": "Recursion in components, and the point where indentation stops working on mobile.", "minutes": 50 },
-    { "day": 36, "title": "A sticky header that hides on scroll down", "brief": "Reveal on scroll up. Get the thresholds right or it feels broken.", "minutes": 45 },
-    { "day": 37, "title": "Skeleton to content with no layout shift", "brief": "Measure your CLS before and after. Numbers, not vibes.", "minutes": 45 },
-    { "day": 38, "title": "A settings page that saves on change", "brief": "No save button. Show what saved and when.", "minutes": 45 },
-    { "day": 39, "title": "An offline banner and a retry queue", "brief": "Patchy 4G is the default condition, not the edge case.", "minutes": 55 },
-    { "day": 40, "title": "A stepper that shows real progress", "brief": "Steps behind, current step, steps ahead. Honest about what remains.", "minutes": 40 },
-    { "day": 41, "title": "A sortable table with a mobile fallback", "brief": "Tables do not fit at 390px. Decide what they become instead.", "minutes": 55 },
-    { "day": 42, "title": "A password field with honest strength feedback", "brief": "Say what would make it stronger, not just \"weak\".", "minutes": 40 },
-    { "day": 43, "title": "A carousel that works with swipe and keyboard", "brief": "The most-hated component on the web. Build a good one.", "minutes": 55 },
-    { "day": 44, "title": "Toast, modal and focus, all together", "brief": "Three things you have built separately, now competing for the same focus.", "minutes": 50 },
-    { "day": 45, "title": "Rate limit feedback a user understands", "brief": "Not \"429\". Say how long to wait and why.", "minutes": 35 },
-    { "day": 46, "title": "A calendar month view at 390px", "brief": "Seven columns on a narrow screen. Something has to give.", "minutes": 55 },
-    { "day": 47, "title": "A bottom sheet with drag to dismiss", "brief": "The mobile pattern people actually reach for.", "minutes": 55 },
-    { "day": 48, "title": "A command palette with fuzzy search", "brief": "Cmd+K. Keyboard-first, and it should feel instant.", "minutes": 55 },
-    { "day": 49, "title": "A diff view for two strings", "brief": "Show what changed, character by character.", "minutes": 50 },
-    { "day": 50, "title": "Animate a list add and remove", "brief": "Items should not pop in and out. Respect reduced motion.", "minutes": 45 },
-    { "day": 51, "title": "A form that tells you what changed", "brief": "Highlight dirty fields and warn before discarding them.", "minutes": 45 },
-    { "day": 52, "title": "A print stylesheet for a receipt", "brief": "Nobody does this. It takes 30 minutes and it always impresses.", "minutes": 35 },
-    { "day": 53, "title": "An error boundary that is actually useful", "brief": "Tell the user what broke and give them a way forward.", "minutes": 40 },
-    { "day": 54, "title": "A theme switcher that respects system preference", "brief": "Three states: light, dark, and whatever the system says.", "minutes": 40 },
-    { "day": 55, "title": "Reduce your bundle by 30 percent", "brief": "Measure first. Then delete something.", "minutes": 50 },
-    { "day": 56, "title": "Audit one page for accessibility", "brief": "Keyboard only, then screen reader. Write down every failure.", "minutes": 50 },
-    { "day": 57, "title": "A profile page built from your own build log", "brief": "Use your 56 days of commits as the data source.", "minutes": 55 },
-    { "day": 58, "title": "A landing page for the thing you built", "brief": "Explain your best project to someone who has never seen it.", "minutes": 55 },
-    { "day": 59, "title": "Write the README you wish you had", "brief": "Go back to day 1 and document it properly.", "minutes": 40 },
-    { "day": 60, "title": "Ship your build log and post the recap", "brief": "Sixty repos, one page, one honest post about what changed.", "minutes": 60 }
+    {
+      "day": 14,
+      "title": "A date picker for one hand",
+      "brief": "Assume a thumb, a 390px screen and no patience.",
+      "minutes": 55,
+      "why": "A date picker built for a mouse is unusable with a thumb.",
+      "build": "A date picker sized for one hand on a 390px screen.",
+      "doneWhen": [
+        "Every target is at least 44px.",
+        "Reachable in the lower half of the screen.",
+        "Month navigation needs one tap.",
+        "Typing a date still works."
+      ],
+      "stretch": "Add quick options for today and tomorrow.",
+      "hint": "Open it from the bottom of the screen, not the top."
+    },
+    {
+      "day": 15,
+      "title": "Optimistic UI with rollback",
+      "brief": "Show the result immediately, undo it cleanly when the request fails.",
+      "minutes": 50,
+      "why": "Waiting for a server before showing a result makes an app feel slow.",
+      "build": "A like button that updates instantly and rolls back on failure.",
+      "doneWhen": [
+        "The UI updates before the request resolves.",
+        "A failure reverts the change.",
+        "The user is told when a rollback happens.",
+        "Rapid clicks do not corrupt the count."
+      ],
+      "stretch": "Queue changes while offline and replay them on reconnect.",
+      "hint": "Keep the previous value. Rollback is just putting it back."
+    },
+    {
+      "day": 16,
+      "title": "A virtualised list of 10,000 rows",
+      "brief": "Render only what is visible. Learn why the DOM is the bottleneck.",
+      "minutes": 55,
+      "why": "Ten thousand DOM nodes is how a list becomes a slideshow.",
+      "build": "A list of 10,000 rows that only renders what is visible.",
+      "doneWhen": [
+        "Scrolling stays smooth throughout.",
+        "DOM node count stays roughly constant.",
+        "The scrollbar reflects the full list.",
+        "Keyboard scrolling still works."
+      ],
+      "stretch": "Support rows of differing heights.",
+      "hint": "Render a spacer with the full height, then position visible rows inside it."
+    },
+    {
+      "day": 17,
+      "title": "Drag to reorder, keyboard accessible",
+      "brief": "If it only works with a mouse, it does not work.",
+      "minutes": 55,
+      "why": "If it only works with a mouse, it does not work.",
+      "build": "A reorderable list that works by drag and by keyboard.",
+      "doneWhen": [
+        "Drag reorders with a clear drop indicator.",
+        "Arrow keys move the selected item.",
+        "Each move is announced to a screen reader.",
+        "The new order persists."
+      ],
+      "stretch": "Add an undo for the last move.",
+      "hint": "Build the keyboard version first. Dragging is the easier half."
+    },
+    {
+      "day": 18,
+      "title": "A tab component that syncs to the URL",
+      "brief": "Refreshing the page should keep the tab you were on.",
+      "minutes": 40,
+      "why": "A tab you cannot link to is a tab you cannot share.",
+      "build": "A tab component whose state lives in the URL.",
+      "doneWhen": [
+        "Refreshing keeps the current tab.",
+        "Back and forward move between tabs.",
+        "The URL is shareable.",
+        "Arrow keys move between tabs."
+      ],
+      "stretch": "Add a default tab that does not pollute the URL.",
+      "hint": "Use the query string. Hash fragments fight anchor links."
+    },
+    {
+      "day": 19,
+      "title": "Copy to clipboard with real feedback",
+      "brief": "The button text should change, and change back.",
+      "minutes": 25,
+      "why": "A copy button with no feedback makes people click it four times.",
+      "build": "Copy to clipboard with feedback that resets itself.",
+      "doneWhen": [
+        "Button text changes on success.",
+        "It resets after a couple of seconds.",
+        "Failure is handled, not silent.",
+        "The change is announced to a screen reader."
+      ],
+      "stretch": "Copy formatted and plain text at once.",
+      "hint": "The Clipboard API needs a user gesture and a secure context."
+    },
+    {
+      "day": 20,
+      "title": "An image with a blur-up placeholder",
+      "brief": "No layout shift, no white flash, works on a slow connection.",
+      "minutes": 40,
+      "why": "A white flash then a layout jump is the cheapest thing to fix and the most common.",
+      "build": "An image with a blur-up placeholder and no layout shift.",
+      "doneWhen": [
+        "Space is reserved before the image loads.",
+        "A blurred placeholder shows first.",
+        "Failure shows a real fallback.",
+        "Alt text is present and meaningful."
+      ],
+      "stretch": "Add native lazy loading and measure the difference.",
+      "hint": "Set width and height attributes. The aspect ratio does the rest."
+    },
+    {
+      "day": 21,
+      "title": "A multi-step form that survives a refresh",
+      "brief": "Losing four steps of input to an accidental reload is a design failure.",
+      "minutes": 55,
+      "why": "Losing four steps of typing to an accidental refresh is a design failure.",
+      "build": "A multi-step form that survives a reload.",
+      "doneWhen": [
+        "Progress restores after a refresh.",
+        "Back moves a step, not off the page.",
+        "Each step validates before advancing.",
+        "A completed submit clears the saved state."
+      ],
+      "stretch": "Warn before leaving with unsaved changes.",
+      "hint": "Save on change, not on step transition."
+    },
+    {
+      "day": 22,
+      "title": "Empty, loading, error and success in one component",
+      "brief": "Four states, one component, no copy-pasted markup.",
+      "minutes": 45,
+      "why": "Four states copy-pasted four times is four places to fix a bug.",
+      "build": "One component that handles empty, loading, error and success.",
+      "doneWhen": [
+        "All four render from one component.",
+        "Empty invites an action, it is not just a message.",
+        "Error says what happened and how to retry.",
+        "No duplicated markup between states."
+      ],
+      "stretch": "Add a partial state for cached data being refreshed.",
+      "hint": "Make the state an explicit value, not a mix of booleans."
+    },
+    {
+      "day": 23,
+      "title": "A tooltip that never leaves the viewport",
+      "brief": "Flip it when it would be cut off. Test it in the corner.",
+      "minutes": 45,
+      "why": "A tooltip clipped by the viewport is worse than no tooltip.",
+      "build": "A tooltip that flips when it would be cut off.",
+      "doneWhen": [
+        "Flips near any edge.",
+        "Never overflows the viewport.",
+        "Appears on focus, not only hover.",
+        "Escape dismisses it."
+      ],
+      "stretch": "Add a small delay before showing, none before hiding.",
+      "hint": "Test it in all four corners. That is where it breaks."
+    },
+    {
+      "day": 24,
+      "title": "Client-side routing without a router",
+      "brief": "Understand the History API before you let a library hide it.",
+      "minutes": 50,
+      "why": "Understand the History API before you let a library hide it.",
+      "build": "Client-side routing in about 50 lines, no library.",
+      "doneWhen": [
+        "Links change the view without a reload.",
+        "Back and forward work.",
+        "A direct URL loads the right view.",
+        "An unknown route shows a real 404."
+      ],
+      "stretch": "Add a route parameter such as a user id.",
+      "hint": "pushState plus a popstate listener is most of it."
+    },
+    {
+      "day": 25,
+      "title": "Form validation that reads like a human",
+      "brief": "Say what is wrong and how to fix it. Never just \"invalid input\".",
+      "minutes": 40,
+      "why": "Invalid input is not an error message. It is a shrug.",
+      "build": "Validation messages a human can act on.",
+      "doneWhen": [
+        "Every message says how to fix it.",
+        "No jargon and no error codes.",
+        "Messages sit next to their field.",
+        "Errors are announced, not only coloured."
+      ],
+      "stretch": "Add a summary at the top that links to each bad field.",
+      "hint": "Read each message aloud. If it sounds rude, rewrite it."
+    },
+    {
+      "day": 26,
+      "title": "Undo and redo for a text field",
+      "brief": "A small state machine, and your first taste of command patterns.",
+      "minutes": 50,
+      "why": "Undo is the feature that makes people brave.",
+      "build": "Undo and redo for a text field.",
+      "doneWhen": [
+        "Ctrl+Z and Ctrl+Shift+Z both work.",
+        "History has a sensible depth limit.",
+        "A new edit clears the redo stack.",
+        "Rapid typing groups into one step."
+      ],
+      "stretch": "Add a visible history the user can jump into.",
+      "hint": "Store snapshots, not diffs. Diffs are day 49."
+    },
+    {
+      "day": 27,
+      "title": "A chart with no chart library",
+      "brief": "SVG, some maths, and a lot less bundle weight.",
+      "minutes": 55,
+      "why": "A chart library is 200KB. Sometimes you need one line and some maths.",
+      "build": "A line chart in raw SVG.",
+      "doneWhen": [
+        "Scales correctly to its container.",
+        "Axes are labelled.",
+        "The data is available as a table for screen readers.",
+        "Works with 2 points and with 200."
+      ],
+      "stretch": "Add a hover state showing the value at a point.",
+      "hint": "Map your data range onto the pixel range. That is the whole trick."
+    },
+    {
+      "day": 28,
+      "title": "Keyboard shortcuts that do not fight the browser",
+      "brief": "Do not steal Ctrl+F. Learn which keys are yours.",
+      "minutes": 40,
+      "why": "Stealing Ctrl+F is how you make a user hate your app.",
+      "build": "Keyboard shortcuts that respect the browser.",
+      "doneWhen": [
+        "No browser shortcut is overridden.",
+        "Shortcuts do not fire while typing in an input.",
+        "A help overlay lists them.",
+        "They can be turned off."
+      ],
+      "stretch": "Add a two-key sequence such as g then d.",
+      "hint": "Check for an input or contenteditable target before acting."
+    },
+    {
+      "day": 29,
+      "title": "A focus trap for an overlay",
+      "brief": "Tab should cycle inside the overlay and nowhere else.",
+      "minutes": 45,
+      "why": "Focus escaping an overlay is the most common accessibility bug in production.",
+      "build": "A reusable focus trap.",
+      "doneWhen": [
+        "Tab and Shift+Tab stay inside.",
+        "Focus moves to the first sensible element on open.",
+        "Focus returns to the trigger on close.",
+        "Works with dynamically added elements."
+      ],
+      "stretch": "Handle the case where the overlay has no focusable elements.",
+      "hint": "Query focusable elements on each tab, not once on open."
+    },
+    {
+      "day": 30,
+      "title": "Halfway. Refactor your day 12 card.",
+      "brief": "Open the thing you built on day 12 and make it better. Note what you now see.",
+      "minutes": 45,
+      "why": "Halfway. The most useful thing you can do is look at your own old code.",
+      "build": "Reopen day 12 and improve it with what you now know.",
+      "doneWhen": [
+        "At least three specific improvements.",
+        "A written note on what you changed and why.",
+        "It still passes the original checklist.",
+        "The original version is still in your history."
+      ],
+      "stretch": "Write the test you wish you had written on day 12.",
+      "hint": "Do not rewrite it. Improve it. The difference matters."
+    },
+    {
+      "day": 31,
+      "title": "File upload with drag, drop and progress",
+      "brief": "Three states and a real progress number, not a fake spinner.",
+      "minutes": 55,
+      "why": "Upload is three states and a progress number, and most people fake all four.",
+      "build": "A file upload with drag, drop and real progress.",
+      "doneWhen": [
+        "Drag over shows a clear target.",
+        "Progress reflects actual bytes sent.",
+        "Failure offers a retry.",
+        "A file picker fallback exists."
+      ],
+      "stretch": "Support multiple files with per-file progress.",
+      "hint": "XMLHttpRequest still gives better upload progress than fetch."
+    },
+    {
+      "day": 32,
+      "title": "Pagination that keeps scroll position",
+      "brief": "Going back should not send the user to the top of the page.",
+      "minutes": 40,
+      "why": "Sending someone to the top of the page on every page change is a small cruelty.",
+      "build": "Pagination that preserves scroll position.",
+      "doneWhen": [
+        "Going back restores the previous position.",
+        "The page number is in the URL.",
+        "Loading does not collapse the layout.",
+        "Keyboard users can reach the controls."
+      ],
+      "stretch": "Prefetch the next page on hover.",
+      "hint": "Save the scroll offset before navigating, restore after render."
+    },
+    {
+      "day": 33,
+      "title": "A search that highlights matches",
+      "brief": "Highlight without breaking the markup or the accessibility tree.",
+      "minutes": 45,
+      "why": "Highlighting matches by string replacement breaks your markup.",
+      "build": "Search results with highlighted matches.",
+      "doneWhen": [
+        "Matches are highlighted safely, not by injecting HTML.",
+        "Case-insensitive matching works.",
+        "Special characters do not break it.",
+        "Highlighting does not confuse a screen reader."
+      ],
+      "stretch": "Highlight multiple search terms in different colours.",
+      "hint": "Split the string into parts and render them. Never set innerHTML."
+    },
+    {
+      "day": 34,
+      "title": "Filter chips with a clear-all",
+      "brief": "Multiple filters, visible state, one way out.",
+      "minutes": 40,
+      "why": "Filters with no visible state are filters people forget they applied.",
+      "build": "Filter chips with a clear-all.",
+      "doneWhen": [
+        "Active filters are obviously active.",
+        "Each chip removes individually.",
+        "Clear-all appears only when something is active.",
+        "The result count updates live."
+      ],
+      "stretch": "Put the filter state in the URL so it can be shared.",
+      "hint": "Show the count of results, not just the results."
+    },
+    {
+      "day": 35,
+      "title": "A comment thread that nests three deep",
+      "brief": "Recursion in components, and the point where indentation stops working on mobile.",
+      "minutes": 50,
+      "why": "Recursion in components is easy. Indentation on a 390px screen is not.",
+      "build": "A comment thread nested three levels deep.",
+      "doneWhen": [
+        "Renders recursively without duplicated code.",
+        "Readable at 390px at every depth.",
+        "Depth is capped with a continue-thread link.",
+        "Nesting is conveyed to screen readers."
+      ],
+      "stretch": "Add collapse and expand per branch.",
+      "hint": "Stop indenting after level two. Use a marker instead."
+    },
+    {
+      "day": 36,
+      "title": "A sticky header that hides on scroll down",
+      "brief": "Reveal on scroll up. Get the thresholds right or it feels broken.",
+      "minutes": 45,
+      "why": "Hide on scroll down, reveal on scroll up. Get the threshold wrong and it feels broken.",
+      "build": "A sticky header that hides and reveals.",
+      "doneWhen": [
+        "Hides on scroll down, reveals on scroll up.",
+        "Does not flicker on small movements.",
+        "Always visible at the top of the page.",
+        "Respects reduced motion."
+      ],
+      "stretch": "Add a shadow only once the page has scrolled.",
+      "hint": "Use a threshold of about 10 pixels. Anything less flickers."
+    },
+    {
+      "day": 37,
+      "title": "Skeleton to content with no layout shift",
+      "brief": "Measure your CLS before and after. Numbers, not vibes.",
+      "minutes": 45,
+      "why": "Cumulative layout shift is measurable. Fix it with numbers, not vibes.",
+      "build": "A skeleton to content transition with zero shift.",
+      "doneWhen": [
+        "Measured CLS is under 0.1.",
+        "Nothing moves when content arrives.",
+        "Before and after numbers are recorded.",
+        "Images have reserved space."
+      ],
+      "stretch": "Add a font loading strategy that avoids text reflow.",
+      "hint": "Chrome DevTools has a layout shift overlay. Turn it on."
+    },
+    {
+      "day": 38,
+      "title": "A settings page that saves on change",
+      "brief": "No save button. Show what saved and when.",
+      "minutes": 45,
+      "why": "A save button is a question the user should not have to answer.",
+      "build": "A settings page that saves as you change things.",
+      "doneWhen": [
+        "Changes save without a button.",
+        "A saved indicator appears and fades.",
+        "Failure is visible and retryable.",
+        "Rapid changes do not race."
+      ],
+      "stretch": "Add an undo for the last change.",
+      "hint": "Debounce the save, but show the pending state immediately."
+    },
+    {
+      "day": 39,
+      "title": "An offline banner and a retry queue",
+      "brief": "Patchy 4G is the default condition, not the edge case.",
+      "minutes": 55,
+      "why": "Patchy 4G is the default condition for your users, not an edge case.",
+      "build": "An offline banner with a retry queue.",
+      "doneWhen": [
+        "A banner appears when the connection drops.",
+        "Actions queue instead of failing.",
+        "The queue replays on reconnect.",
+        "The user can see what is pending."
+      ],
+      "stretch": "Persist the queue so it survives a refresh.",
+      "hint": "The online and offline events lie sometimes. Verify with a real request."
+    },
+    {
+      "day": 40,
+      "title": "A stepper that shows real progress",
+      "brief": "Steps behind, current step, steps ahead. Honest about what remains.",
+      "minutes": 40,
+      "why": "A progress bar that does not reflect reality is worse than none.",
+      "build": "A stepper showing real progress through a flow.",
+      "doneWhen": [
+        "Completed, current and upcoming steps are distinct.",
+        "Completed steps can be revisited.",
+        "Progress is announced to screen readers.",
+        "Fits five steps at 390px."
+      ],
+      "stretch": "Allow skipping optional steps and show that clearly.",
+      "hint": "Show the step name, not just a number."
+    },
+    {
+      "day": 41,
+      "title": "A sortable table with a mobile fallback",
+      "brief": "Tables do not fit at 390px. Decide what they become instead.",
+      "minutes": 55,
+      "why": "Tables do not fit at 390px. Decide what yours becomes instead.",
+      "build": "A sortable table with a real mobile layout.",
+      "doneWhen": [
+        "Sorts by any column, both directions.",
+        "Becomes cards or a list below 640px.",
+        "Sort state is announced.",
+        "Sorting is stable."
+      ],
+      "stretch": "Add multi-column sorting.",
+      "hint": "Do not just scroll it sideways. Change the shape."
+    },
+    {
+      "day": 42,
+      "title": "A password field with honest strength feedback",
+      "brief": "Say what would make it stronger, not just \"weak\".",
+      "minutes": 40,
+      "why": "Weak is not feedback. Say what would make it stronger.",
+      "build": "A password field with honest strength feedback.",
+      "doneWhen": [
+        "Feedback names the specific improvement.",
+        "No arbitrary character rules.",
+        "A visibility toggle exists.",
+        "Strength is announced, not only coloured."
+      ],
+      "stretch": "Check against a list of common passwords.",
+      "hint": "Length beats complexity. Say so."
+    },
+    {
+      "day": 43,
+      "title": "A carousel that works with swipe and keyboard",
+      "brief": "The most-hated component on the web. Build a good one.",
+      "minutes": 55,
+      "why": "The most-hated component on the web. Build a good one.",
+      "build": "A carousel that works by swipe and by keyboard.",
+      "doneWhen": [
+        "Swipe works on touch.",
+        "Arrow keys work.",
+        "Current position is visible.",
+        "Autoplay pauses on focus and hover."
+      ],
+      "stretch": "Add a reduced-motion variant with no sliding.",
+      "hint": "Scroll snap gets you most of the way with far less code."
+    },
+    {
+      "day": 44,
+      "title": "Toast, modal and focus, all together",
+      "brief": "Three things you have built separately, now competing for the same focus.",
+      "minutes": 50,
+      "why": "Three things you built separately, now fighting over the same focus.",
+      "build": "A modal that opens a toast and returns focus correctly.",
+      "doneWhen": [
+        "Toast is announced while the modal is open.",
+        "Closing the modal returns focus correctly.",
+        "Toast does not steal focus.",
+        "Escape closes only the top layer."
+      ],
+      "stretch": "Add a confirm dialog opened from inside the modal.",
+      "hint": "Keep a stack of layers. The top one owns escape."
+    },
+    {
+      "day": 45,
+      "title": "Rate limit feedback a user understands",
+      "brief": "Not \"429\". Say how long to wait and why.",
+      "minutes": 35,
+      "why": "429 is not an error message. It is a status code.",
+      "build": "Rate limit feedback a person understands.",
+      "doneWhen": [
+        "Says how long to wait.",
+        "Explains why in plain words.",
+        "A countdown updates live.",
+        "Retry is disabled until it is useful."
+      ],
+      "stretch": "Retry automatically with backoff once the wait ends.",
+      "hint": "Read the Retry-After header. It is usually there."
+    },
+    {
+      "day": 46,
+      "title": "A calendar month view at 390px",
+      "brief": "Seven columns on a narrow screen. Something has to give.",
+      "minutes": 55,
+      "why": "Seven columns on a 390px screen. Something has to give.",
+      "build": "A month calendar that works at 390px.",
+      "doneWhen": [
+        "All seven columns fit with no horizontal scroll.",
+        "Today is clearly marked.",
+        "Arrow keys move by day.",
+        "Days with events are distinguishable."
+      ],
+      "stretch": "Add a swipe gesture to change month.",
+      "hint": "Drop the day names to single letters below 400px."
+    },
+    {
+      "day": 47,
+      "title": "A bottom sheet with drag to dismiss",
+      "brief": "The mobile pattern people actually reach for.",
+      "minutes": 55,
+      "why": "The pattern mobile users actually reach for.",
+      "build": "A bottom sheet with drag to dismiss.",
+      "doneWhen": [
+        "Drags down to dismiss with a threshold.",
+        "Snaps back if not dragged far enough.",
+        "A backdrop tap closes it.",
+        "Focus is trapped while open."
+      ],
+      "stretch": "Add a half-open detent.",
+      "hint": "Track velocity, not only distance. A fast flick should close it."
+    },
+    {
+      "day": 48,
+      "title": "A command palette with fuzzy search",
+      "brief": "Cmd+K. Keyboard-first, and it should feel instant.",
+      "minutes": 55,
+      "why": "Cmd+K. Keyboard-first, and it has to feel instant.",
+      "build": "A command palette with fuzzy search.",
+      "doneWhen": [
+        "Opens with a shortcut from anywhere.",
+        "Fuzzy matching, not exact substring.",
+        "Arrow keys and Enter select.",
+        "Feels instant with 500 commands."
+      ],
+      "stretch": "Add recent commands at the top.",
+      "hint": "Score matches by consecutive character runs."
+    },
+    {
+      "day": 49,
+      "title": "A diff view for two strings",
+      "brief": "Show what changed, character by character.",
+      "minutes": 50,
+      "why": "Show what changed, not that something changed.",
+      "build": "A character-level diff of two strings.",
+      "doneWhen": [
+        "Additions and deletions are visually distinct.",
+        "Handles multi-line input.",
+        "Colour is not the only signal.",
+        "Performs acceptably on long text."
+      ],
+      "stretch": "Add a word-level mode alongside character-level.",
+      "hint": "Longest common subsequence is the classic approach. Start small."
+    },
+    {
+      "day": 50,
+      "title": "Animate a list add and remove",
+      "brief": "Items should not pop in and out. Respect reduced motion.",
+      "minutes": 45,
+      "why": "Items popping in and out makes a list feel broken.",
+      "build": "Animated add and remove on a list.",
+      "doneWhen": [
+        "Additions animate in.",
+        "Removals animate out before disappearing.",
+        "Surrounding items move smoothly.",
+        "Reduced motion disables all of it."
+      ],
+      "stretch": "Animate reordering as well as add and remove.",
+      "hint": "Measure positions before and after, then animate the difference."
+    },
+    {
+      "day": 51,
+      "title": "A form that tells you what changed",
+      "brief": "Highlight dirty fields and warn before discarding them.",
+      "minutes": 45,
+      "why": "A form that discards your work without asking has broken a promise.",
+      "build": "A form that shows what changed.",
+      "doneWhen": [
+        "Changed fields are visibly marked.",
+        "A count of changes is shown.",
+        "Discard asks first.",
+        "Reset returns to the original values."
+      ],
+      "stretch": "Add a per-field revert.",
+      "hint": "Keep the initial values. Everything else is a comparison."
+    },
+    {
+      "day": 52,
+      "title": "A print stylesheet for a receipt",
+      "brief": "Nobody does this. It takes 30 minutes and it always impresses.",
+      "minutes": 35,
+      "why": "Nobody does this. It takes 30 minutes and it always impresses.",
+      "build": "A print stylesheet for a receipt.",
+      "doneWhen": [
+        "Prints cleanly to A4.",
+        "Navigation and buttons are hidden.",
+        "Content does not break across pages badly.",
+        "Link URLs are shown in the printed output."
+      ],
+      "stretch": "Add a page header and footer with page numbers.",
+      "hint": "Use the print preview constantly. It is the only real test."
+    },
+    {
+      "day": 53,
+      "title": "An error boundary that is actually useful",
+      "brief": "Tell the user what broke and give them a way forward.",
+      "minutes": 40,
+      "why": "Something went wrong is not help. It is an apology with no content.",
+      "build": "An error boundary that gives the user a way forward.",
+      "doneWhen": [
+        "Catches render errors without a white screen.",
+        "Offers a specific next action.",
+        "Logs enough detail to debug.",
+        "The rest of the app still works."
+      ],
+      "stretch": "Add a reset that retries without a full reload.",
+      "hint": "Per-section boundaries beat one at the root."
+    },
+    {
+      "day": 54,
+      "title": "A theme switcher that respects system preference",
+      "brief": "Three states: light, dark, and whatever the system says.",
+      "minutes": 40,
+      "why": "Three states, not two. The third is what the system already said.",
+      "build": "A theme switcher with light, dark and system.",
+      "doneWhen": [
+        "All three options work.",
+        "System follows OS changes live.",
+        "The choice persists.",
+        "No flash of the wrong theme on load."
+      ],
+      "stretch": "Add a smooth transition that respects reduced motion.",
+      "hint": "An inline script before paint prevents the flash."
+    },
+    {
+      "day": 55,
+      "title": "Reduce your bundle by 30 percent",
+      "brief": "Measure first. Then delete something.",
+      "minutes": 50,
+      "why": "Measure first. Then delete something.",
+      "build": "A 30 percent bundle reduction on a real page.",
+      "doneWhen": [
+        "Before and after sizes are recorded.",
+        "The reduction is at least 30 percent.",
+        "Nothing broke.",
+        "You can name what caused the win."
+      ],
+      "stretch": "Set a bundle size budget that fails the build.",
+      "hint": "One oversized dependency is usually most of it. Find it first."
+    },
+    {
+      "day": 56,
+      "title": "Audit one page for accessibility",
+      "brief": "Keyboard only, then screen reader. Write down every failure.",
+      "minutes": 50,
+      "why": "Keyboard only, then a screen reader. Write down every failure.",
+      "build": "A full accessibility audit of one page.",
+      "doneWhen": [
+        "Whole page usable by keyboard alone.",
+        "Tested with a real screen reader.",
+        "Every failure written down.",
+        "At least three are fixed."
+      ],
+      "stretch": "Add an automated check to your build.",
+      "hint": "Unplug the mouse. That is the whole first half of the audit."
+    },
+    {
+      "day": 57,
+      "title": "A profile page built from your own build log",
+      "brief": "Use your 56 days of commits as the data source.",
+      "minutes": 55,
+      "why": "Fifty-six nights of commits is a dataset. Use it.",
+      "build": "A profile page built from your own build log.",
+      "doneWhen": [
+        "Reads from your real commit history.",
+        "Shows the streak and the artifacts.",
+        "Works at 390px.",
+        "Loads in under two seconds."
+      ],
+      "stretch": "Add a filter by track or by technology.",
+      "hint": "The GitHub API gives you commits per repo without authentication."
+    },
+    {
+      "day": 58,
+      "title": "A landing page for the thing you built",
+      "brief": "Explain your best project to someone who has never seen it.",
+      "minutes": 55,
+      "why": "Explain your best project to someone who has never seen it.",
+      "build": "A landing page for the thing you are proudest of.",
+      "doneWhen": [
+        "A stranger understands it in ten seconds.",
+        "Shows the thing working, not only describing it.",
+        "One clear call to action.",
+        "Works at 390px."
+      ],
+      "stretch": "Add a 30 second demo recording.",
+      "hint": "Lead with what it does. Save how it works for later."
+    },
+    {
+      "day": 59,
+      "title": "Write the README you wish you had",
+      "brief": "Go back to day 1 and document it properly.",
+      "minutes": 40,
+      "why": "Go back to night one and document it properly.",
+      "build": "The README you wish day 1 had.",
+      "doneWhen": [
+        "Explains what it is and why it exists.",
+        "Setup instructions someone can actually follow.",
+        "A screenshot or a recording.",
+        "Honest about what is unfinished."
+      ],
+      "stretch": "Add a short architecture note.",
+      "hint": "Ask someone to follow your setup steps exactly. Watch where they stop."
+    },
+    {
+      "day": 60,
+      "title": "Ship your build log and post the recap",
+      "brief": "Sixty repos, one page, one honest post about what changed.",
+      "minutes": 60,
+      "why": "Sixty repos, one page, one honest post about what changed.",
+      "build": "Your public build log and the recap post.",
+      "doneWhen": [
+        "All 60 days are on one page.",
+        "Links to every repo work.",
+        "The recap is honest about the nights you missed.",
+        "The page works at 390px."
+      ],
+      "stretch": "Add what you would tell yourself on night one.",
+      "hint": "Write the post you would have believed on day 1."
+    }
   ]
 }
