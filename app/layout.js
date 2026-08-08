@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
           Skip to content
         </a>
 
-        <div className="lg:flex lg:items-start lg:justify-center lg:gap-12">
+        <div className="lg:mx-auto lg:flex lg:w-fit lg:items-start lg:gap-12">
           {/* Standing rail. Desktop only, and deliberately not a second column
               of product: it explains the artifact rather than competing with it. */}
           <aside className="hidden lg:block lg:w-[260px] lg:shrink-0 lg:pt-2">
