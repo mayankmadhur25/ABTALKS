@@ -86,8 +86,8 @@ export default function DashboardPage({ searchParams }) {
             <p className="mt-2 text-[13.5px] leading-relaxed opacity-85">
               Your {student.longestStreak}-night streak is paused, not gone.
               Ship day {student.missedDays[0]} and day {student.currentDay}{" "}
-              before midnight and the strip closes the gap. One shield gets
-              spent.
+              before tonight&rsquo;s 2:00 AM deadline and the strip closes the
+              gap. One shield gets spent.
             </p>
             <Link
               href={`/day/${student.missedDays[0]}?state=${scenario}`}
@@ -275,12 +275,12 @@ export default function DashboardPage({ searchParams }) {
         <section className="px-5 pt-8">
           <div className="rounded-2xl border-2 border-ink bg-blue p-5 text-white">
             <h2 className="font-display text-[17px] font-bold leading-tight tracking-tight">
-              Your build shelf is private right now
+              Complete your public profile
             </h2>
             <p className="mt-2 text-[13.5px] leading-relaxed opacity-90">
               {student.shipped > 0
-                ? `Add a track, a city and one line about yourself, and recruiters can find these ${student.shipped} repos.`
-                : "Add a track, a city and one line about yourself. Do it tonight and everything you build from here is findable."}
+                ? `Add your city and one line about yourself, and recruiters searching ${track.name} can find these ${student.shipped} repos.`
+                : `Add your city and one line about yourself. Do it tonight and everything you build from here is findable by recruiters searching ${track.name}.`}
             </p>
             <button
               type="button"
@@ -288,6 +288,9 @@ export default function DashboardPage({ searchParams }) {
             >
               Finish profile · 2 min
             </button>
+            <p className="mt-2.5 text-center font-mono text-[9.5px] uppercase tracking-wider opacity-70">
+              Profile editing is outside this brief
+            </p>
           </div>
         </section>
       )}

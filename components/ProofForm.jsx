@@ -76,15 +76,15 @@ export default function ProofForm({ dayNumber, drafts, shields }) {
       </p>
       <p aria-live="polite" className="sr-only">
         {ready
-          ? "Both proofs verified. Ready to ship."
-          : `${(repoOk ? 1 : 0) + (postOk ? 1 : 0)} of 2 proofs verified.`}
+          ? "Both links look valid. Ready to ship."
+          : `${(repoOk ? 1 : 0) + (postOk ? 1 : 0)} of 2 links added.`}
       </p>
 
       <div className="mt-4 rounded-2xl border-2 border-ink bg-card p-5">
         <div className="flex items-baseline justify-between gap-3">
           <p className="eyebrow">Proof 1 · the commit</p>
           <Pill tone={repo === "" ? "plain" : repoOk ? "green" : "pink"}>
-            {repo === "" ? "Waiting" : repoOk ? "Verified" : "Not GitHub"}
+            {repo === "" ? "Waiting" : repoOk ? "Valid link" : "Not GitHub"}
           </Pill>
         </div>
 
@@ -109,7 +109,7 @@ export default function ProofForm({ dayNumber, drafts, shields }) {
         >
           {repo !== "" && !repoOk
             ? "That is not a GitHub URL. It should start with github.com/your-username/"
-            : "Paste it straight from the address bar. We check the commit exists and was pushed today."}
+            : "Paste the commit or repo link for tonight's build, straight from the address bar."}
         </p>
       </div>
 
@@ -117,7 +117,7 @@ export default function ProofForm({ dayNumber, drafts, shields }) {
         <div className="flex items-baseline justify-between gap-3">
           <p className="eyebrow">Proof 2 · the post</p>
           <Pill tone={post === "" ? "plain" : postOk ? "green" : "pink"}>
-            {post === "" ? "Waiting" : postOk ? "Verified" : "Not LinkedIn"}
+            {post === "" ? "Waiting" : postOk ? "Valid link" : "Not LinkedIn"}
           </Pill>
         </div>
 
@@ -171,8 +171,8 @@ export default function ProofForm({ dayNumber, drafts, shields }) {
 
       <p className="mt-3.5 text-[12.5px] leading-relaxed text-ink-soft">
         {shields === 0
-          ? "No shields yet. Ship 7 nights in a row and you earn one. A shield holds your streak on a night that goes wrong."
-          : `You have ${shields} ${shields === 1 ? "shield" : "shields"}. If tonight goes dark, a shield holds the streak until tomorrow midnight. You earn one every 7 nights shipped.`}
+          ? "No shields yet. Ship 7 nights in a row and you earn one. A shield holds your streak through a night that goes wrong."
+          : `You have ${shields} ${shields === 1 ? "shield" : "shields"}. If tonight goes dark, a shield holds the streak until tomorrow's 2:00 AM deadline. You earn one every 7 nights shipped.`}
       </p>
 
       <div className="sticky bottom-0 z-20 -mx-5 mt-6 border-t-[1.5px] border-ink bg-paper px-5 pb-5 pt-4">
@@ -193,7 +193,7 @@ export default function ProofForm({ dayNumber, drafts, shields }) {
               : "Add both links to ship"}
         </button>
         <p className="mt-2.5 text-center font-mono text-[10.5px] uppercase tracking-wider text-ink-faint">
-          Closes at 2:00 AM. After that it counts as dark.
+          Every night closes at 2:00 AM IST. After that it counts as dark.
         </p>
       </div>
     </>

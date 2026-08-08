@@ -137,8 +137,9 @@ export default function ChallengeDayPage({ params, searchParams }) {
               This night went dark
             </h2>
             <p className="mt-2 text-[13.5px] leading-relaxed opacity-85">
-              You can still repair it. Ship this task and tonight&rsquo;s before
-              midnight and the strip closes the gap. One shield gets spent.
+              You can still repair it. Ship this task and tonight&rsquo;s
+              before the 2:00 AM deadline and the strip closes the gap. One
+              shield gets spent.
             </p>
           </div>
         )}

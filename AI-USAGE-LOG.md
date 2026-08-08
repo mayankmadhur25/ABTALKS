@@ -119,6 +119,26 @@ old: short lines, one concrete detail, one honest admission.
 
 ---
 
+## 12. Review fixes
+**Commit:** `fix: honest link validation, consistent deadline, coherent profile state`
+**PROMPT:** _(paste the message where you asked for a compliance review)_
+
+**Three problems found and fixed:**
+
+1. The proof form said "We check the commit exists and was pushed today" and
+   showed "Verified", while the code only pattern-matched a URL. Pasting
+   `github.com/fake/fake` produced a green tick. Claiming verification that is
+   not performed is a credibility risk with no upside, so the language now says
+   "Valid link" and describes what it actually does.
+2. The deadline contradicted itself: 2:00 AM on the submission bar, "before
+   midnight" in the repair banner, "tomorrow midnight" in the shield note. All
+   three are now the 2:00 AM IST deadline.
+3. The profile prompt said "add a track" to a student whose rank already read
+   "#38 in Frontend". Rewritten to ask for the fields that are genuinely
+   missing.
+
+---
+
 ## Things AI got wrong
 
 Worth recording, since it is the honest picture:
@@ -130,6 +150,8 @@ Worth recording, since it is the honest picture:
 4. The first post composer output read like documentation.
 5. Files were repeatedly missed when copying between folders, which broke a
    Vercel deploy until `components/AppBar.jsx` was tracked down.
+6. The submission UI claimed to verify GitHub commits when it only validated
+   URL shape. Caught in review, not in writing.
 
 ## What was not AI
 
