@@ -5,9 +5,19 @@ college students.
 
 **Live:** https://abtalks-beta.vercel.app
 
-## AI Usage Log
+## AI usage
 
-See [AI-USAGE-LOG.md](./AI-USAGE-LOG.md).
+Two records, kept separate on purpose.
+
+- **[PROMPTS.md](./PROMPTS.md)** is the raw transcript: every prompt I sent, in
+  order, unedited. Typos included.
+- **[AI-USAGE-LOG.md](./AI-USAGE-LOG.md)** is the curated version: what each
+  prompt produced, which commit it maps to, and what went wrong.
+
+The short version of how it was built: Claude wrote the application code in
+staged commits. I made the direction calls, integrated every file, wrote every
+commit, connected Vercel, tested on a phone, and ran the project past three
+external code reviews.
 
 ## Route Map
 

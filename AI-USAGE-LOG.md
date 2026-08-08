@@ -3,6 +3,10 @@
 **Tool:** Claude (Anthropic), via the chat interface.
 **Session:** one continuous conversation, from brief to deploy.
 
+The unedited transcript is in [PROMPTS.md](./PROMPTS.md). This file is the
+annotated version: the same prompts, plus what each one produced and which
+commit it maps to.
+
 Prompts below are transcribed from that chat, typos and all. They are not
 cleaned up, because the messy ones are the honest record of how this actually
 went: a blocked Node install, a failed build, a rejected design direction, and
