@@ -17,8 +17,12 @@ See [AI-USAGE-LOG.md](./AI-USAGE-LOG.md).
 /day/12
 ```
 
-All three are designed at 390px first. Desktop is a centred column, not a
-separate layout.
+All three are designed at 390px first.
+
+Desktop is a secondary consideration, handled as such. Rather than stretching a
+phone layout across 1400px, the column is presented as what it is: a printed
+sheet, bordered and offset against a darker ground, with a standing rail beside
+it carrying the route map and the thesis. Nothing below 1024px changes.
 
 ## Run it
 
