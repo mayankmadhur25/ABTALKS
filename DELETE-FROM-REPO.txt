@@ -1,0 +1,22 @@
+Delete these from your ABTALKS repo if present.
+
+  ship.sh
+  any folder named commit02 ... commit13, fix2, fix3, final, missing
+
+The complete project is exactly 23 files:
+
+  .gitignore            jsconfig.json        package.json
+  AI-USAGE-LOG.md       next.config.mjs      package-lock.json
+  README.md             postcss.config.js    tailwind.config.js
+  ROUTE-MAP.txt
+
+  app/globals.css       app/layout.js        app/page.js
+  app/dashboard/page.js app/day/[day]/page.js
+
+  components/AppBar.jsx        components/DeskRail.jsx
+  components/ProfileNudge.jsx  components/ProofForm.jsx
+  components/StateSwitcher.jsx components/TallyStrip.jsx
+
+  data/mock.json        lib/data.js
+
+node_modules and .next stay local; .gitignore keeps them out of git.

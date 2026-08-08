@@ -14,15 +14,29 @@ import { Pill } from "@/components/AppBar";
  * it rather than facing an empty box.
  */
 
-const GITHUB = /^https?:\/\/(www\.)?github\.com\/[^/]+\/[^/]+/i;
+/*
+ * The brief asks for a repository or a commit, so an issue or a pull request
+ * is not proof of work. This accepts a repo root or a commit URL and nothing
+ * else.
+ */
+const GITHUB =
+  /^https?:\/\/(www\.)?github\.com\/[\w.-]+\/[\w.-]+(\/commit\/[0-9a-f]{7,40})?\/?$/i;
 /*
  * A LinkedIn profile URL is not a post. The challenge asks for proof of work,
  * so the link has to point at something published: a post, or a feed update.
  */
 const LINKEDIN =
-  /^https?:\/\/([a-z]{2,3}\.)?linkedin\.com\/(posts\/|feed\/update\/|pulse\/)/i;
+  /^https?:\/\/([a-z]{2,3}\.)?linkedin\.com\/(posts|feed\/update|pulse)\/[^/\s?#]+/i;
 
-export default function ProofForm({ dayNumber, total, scenario, drafts, shields }) {
+export default function ProofForm({
+  dayNumber,
+  currentDay,
+  total,
+  scenario,
+  isRepair,
+  drafts,
+  shields,
+}) {
   const [repo, setRepo] = useState("");
   const [post, setPost] = useState("");
   const [draft, setDraft] = useState(drafts[0]);
@@ -50,25 +64,50 @@ export default function ProofForm({ dayNumber, total, scenario, drafts, shields 
     }
   }
 
+  /*
+   * Three different outcomes, because shipping is not one event.
+   * A repair closes an old night and leaves tonight still open, so sending the
+   * student to a "day shipped" dashboard would be a lie.
+   */
   if (shipped) {
+    const isFinalNight = dayNumber === total;
+
+    const title = isRepair
+      ? `Day ${dayNumber} repaired.`
+      : isFinalNight
+        ? "That was night sixty."
+        : `Day ${dayNumber} is done.`;
+
+    const body = isRepair
+      ? `One shield spent, ${Math.max(shields - 1, 0)} left. Day ${currentDay} is still open. Finish it before 2:00 AM and the streak is whole again.`
+      : isFinalNight
+        ? "Sixty nights, sixty things you built. Your build log is public from now on."
+        : `Both proofs landed. Day ${dayNumber + 1} unlocks at 5:00 AM. Go to sleep.`;
+
+    const href = isRepair
+      ? `/day/${currentDay}?state=${scenario}`
+      : "/dashboard?state=shipped";
+
+    const cta = isRepair
+      ? `Go to day ${currentDay}`
+      : isFinalNight
+        ? "See all sixty"
+        : "Back to your dashboard";
+
     return (
       <div className="mt-5 rounded-2xl border-2 border-ink bg-green-deep p-5 text-white">
         <p className="font-mono text-[10px] uppercase tracking-widest">
-          Shipped just now
+          {isRepair ? "Repaired just now" : "Shipped just now"}
         </p>
         <h2 className="mt-2 font-display text-[19px] font-bold tracking-tight">
-          {dayNumber === total ? "That was night sixty." : `Day ${dayNumber} is done.`}
+          {title}
         </h2>
-        <p className="mt-2 text-[13.5px] leading-relaxed opacity-90">
-          {dayNumber === total
-            ? "Sixty nights, sixty things you built. Your build log is public from now on."
-            : `Both proofs landed. Day ${dayNumber + 1} unlocks at 5:00 AM. Go to sleep.`}
-        </p>
+        <p className="mt-2 text-[13.5px] leading-relaxed opacity-90">{body}</p>
         <Link
-          href="/dashboard?state=shipped"
+          href={href}
           className="mt-4 block rounded-xl border-[1.5px] border-white px-4 py-3 text-center text-[14px] font-semibold text-white"
         >
-          {dayNumber === total ? "See all sixty" : "Back to your dashboard"}
+          {cta}
         </Link>
       </div>
     );
@@ -121,8 +160,8 @@ export default function ProofForm({ dayNumber, total, scenario, drafts, shields 
           className="mt-2 text-[12.5px] leading-relaxed text-ink-soft"
         >
           {repo !== "" && !repoOk
-            ? "That is not a GitHub URL. It should start with github.com/your-username/"
-            : "Paste the commit or repo link for tonight's build, straight from the address bar."}
+            ? "That needs to be a repo or a commit: github.com/you/repo, or the /commit/ link."
+            : "The repository or the commit. An issue or a pull request is not proof of work."}
         </p>
       </div>
 
@@ -210,7 +249,9 @@ export default function ProofForm({ dayNumber, total, scenario, drafts, shields 
           }`}
         >
           {ready
-            ? `Ship Day ${dayNumber}`
+            ? isRepair
+              ? `Repair Day ${dayNumber} · 1 shield`
+              : `Ship Day ${dayNumber}`
             : repoOk || postOk
               ? "One proof left"
               : "Add both links to ship"}

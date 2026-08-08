@@ -168,8 +168,10 @@ export default function ChallengeDayPage({ params, searchParams }) {
         {(state === "today" || state === "dark") && (
           <ProofForm
             dayNumber={day.day}
+            currentDay={student.currentDay}
             total={total}
             scenario={scenario}
+            isRepair={state === "dark"}
             drafts={drafts}
             shields={student.shields}
           />

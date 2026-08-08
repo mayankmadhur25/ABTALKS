@@ -1,6 +1,6 @@
+import { Suspense } from "react";
 import "./globals.css";
 import DeskRail from "@/components/DeskRail";
-import { getStudent, getMarks, getTotalDays, getCohort } from "@/lib/data";
 
 export const metadata = {
   title: "ABTalks · 60 nights, 60 things you built",
@@ -29,8 +29,6 @@ export const viewport = {
  * sticky submit bar inside every screen.
  */
 export default function RootLayout({ children }) {
-  const student = getStudent("default");
-
   return (
     <html lang="en">
       <head>
@@ -51,12 +49,9 @@ export default function RootLayout({ children }) {
         </a>
 
         <div className="lg:mx-auto lg:flex lg:w-fit lg:items-start lg:gap-10">
-          <DeskRail
-            marks={getMarks(student)}
-            currentDay={student.currentDay}
-            total={getTotalDays()}
-            cohort={getCohort().number}
-          />
+          <Suspense fallback={null}>
+            <DeskRail />
+          </Suspense>
 
           <div className="mx-auto w-full max-w-[420px] bg-paper lg:mx-0 lg:border-2 lg:border-ink lg:shadow-[8px_8px_0_var(--ink)]">
             {children}

@@ -1,8 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import TallyStrip from "@/components/TallyStrip";
+import {
+  getScenario,
+  getStudent,
+  getMarks,
+  getTotalDays,
+  getCohort,
+} from "@/lib/data";
 
 /*
  * Desktop navigation rail, 1024px and up.
@@ -15,13 +22,30 @@ import TallyStrip from "@/components/TallyStrip";
  * Everything here is in-world. Nothing on the screen is addressed to anyone
  * except a student using the product.
  */
-export default function DeskRail({ marks, currentDay, total, cohort }) {
+export default function DeskRail() {
   const path = usePathname();
+  const params = useSearchParams();
+
+  /*
+   * The rail reads the scenario from the URL rather than being handed a fixed
+   * student. Otherwise /dashboard?state=fresh would show night one in the
+   * sheet and day twelve in the rail, contradicting itself on the same screen.
+   */
+  const scenario = getScenario(params.get("state"));
+  const student = getStudent(scenario);
+  const marks = getMarks(student);
+  const currentDay = student.currentDay;
+  const total = getTotalDays();
+  const cohort = getCohort().number;
+  const suffix = scenario === "default" ? "" : `?state=${scenario}`;
 
   const links = [
     { href: "/", label: "The challenge" },
-    { href: "/dashboard", label: "Your dashboard" },
-    { href: `/day/${currentDay}`, label: `Tonight · Day ${currentDay}` },
+    { href: `/dashboard${suffix}`, label: "Your dashboard" },
+    {
+      href: `/day/${currentDay}${suffix}`,
+      label: `Tonight · Day ${currentDay}`,
+    },
   ];
 
   return (
@@ -40,10 +64,8 @@ export default function DeskRail({ marks, currentDay, total, cohort }) {
       <nav aria-label="Main" className="mt-6">
         <ul className="space-y-1">
           {links.map((link) => {
-            const active =
-              link.href === "/"
-                ? path === "/"
-                : path.startsWith(link.href.split("?")[0]);
+            const base = link.href.split("?")[0];
+            const active = base === "/" ? path === "/" : path.startsWith(base);
             return (
               <li key={link.href}>
                 <Link

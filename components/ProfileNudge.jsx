@@ -49,7 +49,7 @@ export default function ProfileNudge({ track, shipped }) {
       {open ? (
         <div className="mt-4 space-y-3">
           <div>
-            <label htmlFor="city" className="!text-white/70">
+            <label htmlFor="city" className="!text-white">
               City
             </label>
             <input
@@ -57,11 +57,11 @@ export default function ProfileNudge({ track, shipped }) {
               value={city}
               onChange={(e) => setCity(e.target.value)}
               placeholder="Coimbatore"
-              className="w-full rounded-xl border-[1.5px] border-white bg-transparent p-3 font-mono text-[12.5px] text-white placeholder:text-white/50"
+              className="w-full rounded-xl border-[1.5px] border-white bg-transparent p-3 font-mono text-[12.5px] text-white placeholder:text-white/90"
             />
           </div>
           <div>
-            <label htmlFor="line" className="!text-white/70">
+            <label htmlFor="line" className="!text-white">
               One line about you
             </label>
             <input
@@ -69,7 +69,7 @@ export default function ProfileNudge({ track, shipped }) {
               value={line}
               onChange={(e) => setLine(e.target.value)}
               placeholder="3rd year CSE, learning frontend properly"
-              className="w-full rounded-xl border-[1.5px] border-white bg-transparent p-3 font-mono text-[12.5px] text-white placeholder:text-white/50"
+              className="w-full rounded-xl border-[1.5px] border-white bg-transparent p-3 font-mono text-[12.5px] text-white placeholder:text-white/90"
             />
           </div>
           <button
@@ -79,7 +79,7 @@ export default function ProfileNudge({ track, shipped }) {
             className={`w-full rounded-xl px-4 py-3 text-[14px] font-semibold ${
               ready
                 ? "bg-white text-blue"
-                : "cursor-not-allowed border-[1.5px] border-white/40 text-white/50"
+                : "cursor-not-allowed border-[1.5px] border-white/60 text-white/90"
             }`}
           >
             {ready ? "Save and go public" : "Fill both fields"}

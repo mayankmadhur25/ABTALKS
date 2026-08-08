@@ -466,6 +466,39 @@ and four states, which is not work to do hours before a deadline.
 
 ---
 
+## 24. Third code review
+
+**Commit:** `fix: repair flow, shield spend, stricter proof validation, rail scenario`
+
+**PROMPT:** A third review of the updated code. Six issues, all accepted.
+
+1. **The repair flow was incoherent.** Repairing day 11 showed the generic
+   success message and sent the student to the shipped dashboard, which meant
+   fixing an old night silently marked tonight as done too. Repair is now its
+   own outcome: it says day 11 repaired, states that day 12 is still open, and
+   returns to day 12 rather than the dashboard.
+2. **The shield was never spent.** The interface said one shield gets spent and
+   nothing changed. The repair confirmation now shows the remaining count.
+3. **LinkedIn validation accepted a bare prefix.** `linkedin.com/posts/` passed
+   because the pattern checked the prefix without requiring an identifier after
+   it. Fixed and tested against five cases.
+4. **GitHub validation was broader than the brief.** An issue or a pull request
+   URL passed. The brief asks for a repository or a commit, so the pattern now
+   accepts a repo root or a `/commit/` link and nothing else. Tested against
+   five cases.
+5. **A contrast regression I introduced in section 23.** The new profile form
+   used `text-white/70` labels on blue at 3.66:1 and `placeholder:text-white/50`
+   at 2.56:1. Measured the full opacity range: white/80 still fails at 4.34:1,
+   white/90 passes at 5.08:1. Labels are now plain white, placeholders white/90.
+6. **The desktop rail ignored the scenario.** It always read the default
+   student, so `/dashboard?state=fresh` showed night one in the sheet and day
+   twelve in the rail. The rail now reads the scenario from the URL and carries
+   it through its own links.
+
+Also deleted `ship.sh`, a helper script from the scaffold that was never used.
+
+---
+
 ## What AI got wrong
 
 Recorded because it is the honest picture, and because every one of these cost
@@ -494,6 +527,14 @@ real time:
    in the build shelf, and a locked-day message that described the wrong
    unlock condition. All three are the kind of thing that only surfaces when
    someone actually clicks `/day/45` or reaches the end.
+10. **A contrast regression introduced while fixing something else.** The
+    profile form written in section 23 shipped with 3.66:1 labels, one section
+    after a fix for exactly that class of problem. New code needs the same
+    check as old code.
+11. **Both validators were written to the shape of a URL rather than to the
+    requirement.** Any linkedin.com link, then any prefix; any GitHub repo
+    path, including issues. Validation that matches a pattern instead of a
+    rule accepts things the product should reject.
 
 ## What was not AI
 
