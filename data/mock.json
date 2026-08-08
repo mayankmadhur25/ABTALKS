@@ -189,6 +189,57 @@
         "localTime": "Wednesday · 11:31 PM",
         "closesIn": null
       }
+    },
+    "repaired": {
+      "id": "repaired",
+      "label": "Day 11 repaired",
+      "student": {
+        "name": "Aarav",
+        "initials": "AV",
+        "track": "frontend",
+        "currentDay": 12,
+        "streak": 11,
+        "longestStreak": 11,
+        "shipped": 11,
+        "missedDays": [],
+        "repairedDays": [
+          11
+        ],
+        "shields": 1,
+        "profileComplete": true,
+        "todayShipped": false,
+        "rank": 74,
+        "percentile": "Top 29%",
+        "usualShipTime": "11:20 PM",
+        "localTime": "Wednesday · 11:52 PM",
+        "closesIn": "2h 08m"
+      }
+    },
+    "complete": {
+      "id": "complete",
+      "label": "All sixty done",
+      "student": {
+        "name": "Aarav",
+        "initials": "AV",
+        "track": "frontend",
+        "currentDay": 60,
+        "streak": 49,
+        "longestStreak": 49,
+        "shipped": 60,
+        "missedDays": [],
+        "repairedDays": [
+          11
+        ],
+        "shields": 8,
+        "profileComplete": true,
+        "todayShipped": true,
+        "shippedAt": "12:41 AM",
+        "rank": 12,
+        "percentile": "Top 4%",
+        "usualShipTime": "11:20 PM",
+        "localTime": "Sunday · 12:41 AM · Night sixty",
+        "closesIn": null
+      }
     }
   },
   "shelf": [

@@ -84,9 +84,17 @@ export default function ProofForm({
         ? "Sixty nights, sixty things you built. Your build log is public from now on."
         : `Both proofs landed. Day ${dayNumber + 1} unlocks at 5:00 AM. Go to sleep.`;
 
+    /*
+     * The destination has to match the state the student is now in, or the
+     * success screen becomes a lie the moment they leave it. A repair lands on
+     * tonight with the night closed and a shield gone; night sixty lands on a
+     * finished challenge, not on day twelve.
+     */
     const href = isRepair
-      ? `/day/${currentDay}?state=${scenario}`
-      : "/dashboard?state=shipped";
+      ? `/day/${currentDay}?state=repaired`
+      : isFinalNight
+        ? "/dashboard?state=complete"
+        : "/dashboard?state=shipped";
 
     const cta = isRepair
       ? `Go to day ${currentDay}`

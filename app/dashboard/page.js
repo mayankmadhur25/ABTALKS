@@ -152,7 +152,9 @@ export default function DashboardPage({ searchParams }) {
               href={`/day/${student.currentDay}?state=${scenario}`}
               className="mt-4 block rounded-xl border-[1.5px] border-white px-4 py-3 text-center text-[14px] font-semibold text-white"
             >
-              Review what you filed
+              {student.currentDay === total
+                ? "Review night sixty"
+                : "Review what you filed"}
             </Link>
           </div>
         ) : (

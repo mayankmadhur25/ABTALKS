@@ -499,6 +499,37 @@ Also deleted `ship.sh`, a helper script from the scaffold that was never used.
 
 ---
 
+## 25. Fourth code review
+
+**Commit:** `fix: persist repaired and completed states, repaired beats dark`
+
+**PROMPT:** A fourth review. Four issues, all accepted. Two of them were the
+same underlying mistake.
+
+1. **The repair did not persist.** The success screen said day 11 repaired with
+   one shield left, then returned to `?state=missed`, where day 11 is dark
+   again and the shields are back to two. A `repaired` scenario now exists with
+   day 11 in `repairedDays`, one shield spent and the count at 11, and the
+   repair lands there.
+2. **Night sixty landed on day twelve.** "See all sixty" pointed at
+   `?state=shipped`, which is the day 12 scenario. A `complete` scenario now
+   exists at day 60 with all 60 shipped.
+3. **`getDayState` had a precedence trap.** A day appearing in both
+   `missedDays` and `repairedDays` resolved to dark. Repaired now wins, which
+   is the difference between a recovery reading as a recovery and reading as a
+   failure. Verified against that exact case.
+4. **Two cleanup text files contradicted each other**, one claiming 22 files
+   and one claiming 23, and neither listed `ProfileNudge.jsx`, which the
+   dashboard imports. Following either would have broken the build. Both
+   deleted; they were scaffolding for my own file copying, never part of the
+   project.
+
+The reviewer's switcher still offers only the four states the brief names.
+`repaired` and `complete` are outcomes you arrive at by finishing a flow, so
+they are reachable by URL rather than listed as states to browse.
+
+---
+
 ## What AI got wrong
 
 Recorded because it is the honest picture, and because every one of these cost
@@ -531,7 +562,12 @@ real time:
     profile form written in section 23 shipped with 3.66:1 labels, one section
     after a fix for exactly that class of problem. New code needs the same
     check as old code.
-11. **Both validators were written to the shape of a URL rather than to the
+11. **Success screens that stopped being true the moment you left them.** The
+    repair confirmation and the night-sixty confirmation both described a state
+    the application then did not put the student into. Confirming an outcome is
+    not the same as producing it, and the gap only shows up if someone clicks
+    the button after reading the message.
+12. **Both validators were written to the shape of a URL rather than to the
     requirement.** Any linkedin.com link, then any prefix; any GitHub repo
     path, including issues. Validation that matches a pattern instead of a
     rule accepts things the product should reject.
