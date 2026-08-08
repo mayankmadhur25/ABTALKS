@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import AppBar, { Pill } from "@/components/AppBar";
+import StateSwitcher from "@/components/StateSwitcher";
 import TallyStrip from "@/components/TallyStrip";
 import ProofForm from "@/components/ProofForm";
 import {
@@ -8,6 +9,7 @@ import {
   getDayState,
   getMarks,
   getStudent,
+  getScenario,
   getTotalDays,
   getTrack,
   composePost,
@@ -24,17 +26,12 @@ import {
  *   locked  not reached yet, title visible, body sealed
  */
 
-export function generateStaticParams() {
-  return Array.from({ length: getTotalDays() }, (_, i) => ({
-    day: String(i + 1),
-  }));
-}
-
-export default function ChallengeDayPage({ params }) {
+export default function ChallengeDayPage({ params, searchParams }) {
   const day = getDay(params.day);
   if (!day) notFound();
 
-  const student = getStudent("default");
+  const scenario = getScenario(searchParams?.state);
+  const student = getStudent(scenario);
   const total = getTotalDays();
   const track = getTrack(student.track);
   const state = getDayState(day.day, student);
@@ -43,7 +40,7 @@ export default function ChallengeDayPage({ params }) {
   return (
     <main className="pb-4">
       <AppBar
-        back="/dashboard"
+        back={`/dashboard?state=${scenario}`}
         title={`Day ${day.day}`}
         right={
           <Pill
@@ -86,7 +83,7 @@ export default function ChallengeDayPage({ params }) {
               much as you think.
             </p>
             <Link
-              href={`/day/${student.currentDay}`}
+              href={`/day/${student.currentDay}?state=${scenario}`}
               className="mt-4 block rounded-xl bg-blue px-4 py-3.5 text-center text-[15px] font-semibold text-white press"
             >
               Go to tonight, day {student.currentDay}
@@ -174,6 +171,8 @@ export default function ChallengeDayPage({ params }) {
           />
         )}
       </div>
+
+      <StateSwitcher current={scenario} base={`/day/${day.day}`} />
     </main>
   );
 }
