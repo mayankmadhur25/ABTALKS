@@ -337,7 +337,12 @@ gone" rather than "streak lost".
 eyeballed. Three failed: muted text at 2.49:1, white on pink at 3.34:1, white
 on green at 2.58:1. Fixed by keeping the bright inks for the strip marks, where
 the 3:1 graphical threshold applies, and adding deeper variants for anything
-carrying white text. All eleven pairings pass now.
+carrying white text.
+
+**This fix was incomplete and I did not notice.** The deeper variants were
+defined but never applied on the landing page, so two low-contrast usages
+survived. See section 23. Worse, this log originally claimed all eleven
+pairings passed, which was not true at the time it was written.
 
 Also a skip-to-content link, live regions announcing proof validation, and a
 malformed description list corrected.
@@ -421,6 +426,46 @@ product voice.
 
 ---
 
+## 23. Second code review
+
+**Commit:** `fix: contrast stragglers, day 60, locked-day copy, post validation, shelf logic`
+
+**PROMPT:** I ran a second code-level review and pasted the findings into the
+chat. Eight issues came back. Seven were accepted, one was already handled.
+
+**Fixed:**
+
+1. **Contrast, unfinished.** Two bright-pink usages remained on the landing
+   page at 3.03:1 and 3.34:1, because section 18 defined the deep variants but
+   never applied them there. This also meant the claim in section 18 was false.
+   Both corrected, and every text-carrying surface was re-grepped to confirm.
+2. **Day 61.** `dayNumber + 1` meant finishing night sixty announced that day
+   61 unlocks at 5:00 AM. Night sixty now ends the challenge.
+3. **Locked-day copy was wrong.** `/day/45` said it unlocks after closing day
+   12. It now says night 45 opens on night 45, with the count remaining.
+4. **Shipping was a dead end.** The success state lived only inside the form,
+   so returning to the dashboard showed the day still open. It now links to the
+   shipped dashboard state.
+5. **LinkedIn validation was too loose.** Any linkedin.com URL passed,
+   including a profile. The challenge asks for proof of work, so the pattern
+   now requires a post, a feed update or a pulse article, with an error message
+   that says what to do instead.
+6. **A latent shelf bug.** `getShelf` filtered on `item.day <= student.shipped`,
+   comparing a day number against a count. Those diverge the moment a night
+   goes dark: a student on day 12 who missed day 3 has shipped 10, and days 11
+   and 12 would have been wrongly hidden. Membership is now decided by day
+   state. Verified against that exact case.
+7. **The dead profile button.** It had no handler and a caption admitting so,
+   which is developer commentary inside a student's screen, the same mistake as
+   section 22. Replaced with a small working mock: two fields, a save, a
+   confirmed state.
+
+**Noted and deliberately not actioned before judging:** the project is pinned
+to Next.js 14.2.5. An upgrade needs regression testing across all three routes
+and four states, which is not work to do hours before a deadline.
+
+---
+
 ## What AI got wrong
 
 Recorded because it is the honest picture, and because every one of these cost
@@ -440,6 +485,15 @@ real time:
    rewritten.
 7. **Files were repeatedly missed when copying between folders**, which broke a
    Vercel deploy until `components/AppBar.jsx` was tracked down.
+8. **The contrast fix was applied incompletely**, and then this log claimed the
+   work was finished. Two low-contrast usages survived on the landing page
+   until a second review found them. Claiming a fix is complete without
+   re-checking is the worst failure on this list, because it removes the reason
+   to look again.
+9. **Off-by-one on night sixty**, a comparison of a day number against a count
+   in the build shelf, and a locked-day message that described the wrong
+   unlock condition. All three are the kind of thing that only surfaces when
+   someone actually clicks `/day/45` or reaches the end.
 
 ## What was not AI
 

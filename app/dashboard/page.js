@@ -2,6 +2,7 @@ import Link from "next/link";
 import AppBar, { Pill } from "@/components/AppBar";
 import TallyStrip, { TallyKey } from "@/components/TallyStrip";
 import StateSwitcher from "@/components/StateSwitcher";
+import ProfileNudge from "@/components/ProfileNudge";
 import {
   getStudent,
   getScenario,
@@ -138,11 +139,14 @@ export default function DashboardPage({ searchParams }) {
               Shipped {student.shippedAt}
             </p>
             <h2 className="mt-2 font-display text-[19px] font-bold tracking-tight">
-              Day {student.currentDay} is done.
+              {student.currentDay === total
+                ? "That was night sixty."
+                : `Day ${student.currentDay} is done.`}
             </h2>
             <p className="mt-2 text-[13.5px] leading-relaxed opacity-90">
-              Commit and post both landed. Day {student.currentDay + 1} unlocks
-              at 5:00 AM. Go to sleep.
+              {student.currentDay === total
+                ? "Sixty nights, sixty things you built. Your build log is public from now on."
+                : `Commit and post both landed. Day ${student.currentDay + 1} unlocks at 5:00 AM. Go to sleep.`}
             </p>
             <Link
               href={`/day/${student.currentDay}?state=${scenario}`}
@@ -273,25 +277,7 @@ export default function DashboardPage({ searchParams }) {
 
       {!student.profileComplete && (
         <section className="px-5 pt-8">
-          <div className="rounded-2xl border-2 border-ink bg-blue p-5 text-white">
-            <h2 className="font-display text-[17px] font-bold leading-tight tracking-tight">
-              Complete your public profile
-            </h2>
-            <p className="mt-2 text-[13.5px] leading-relaxed opacity-90">
-              {student.shipped > 0
-                ? `Add your city and one line about yourself, and recruiters searching ${track.name} can find these ${student.shipped} repos.`
-                : `Add your city and one line about yourself. Do it tonight and everything you build from here is findable by recruiters searching ${track.name}.`}
-            </p>
-            <button
-              type="button"
-              className="mt-4 w-full rounded-xl border-[1.5px] border-white bg-transparent px-4 py-3 text-[14px] font-semibold text-white"
-            >
-              Finish profile · 2 min
-            </button>
-            <p className="mt-2.5 text-center font-mono text-[9.5px] uppercase tracking-wider opacity-70">
-              Profile editing is outside this brief
-            </p>
-          </div>
+          <ProfileNudge track={track.name} shipped={student.shipped} />
         </section>
       )}
 

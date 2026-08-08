@@ -78,15 +78,16 @@ export default function ChallengeDayPage({ params, searchParams }) {
               This night has not happened yet
             </h2>
             <p className="mt-2 text-[13.5px] leading-relaxed text-ink-soft">
-              Day {day.day} unlocks after you close day {student.currentDay}.
-              You can see what is coming, but reading ahead does not help as
-              much as you think.
+              Night {day.day} opens on night {day.day}. You are on night{" "}
+              {student.currentDay}, so there are {day.day - student.currentDay}{" "}
+              to go. You can see what is coming, but reading ahead does not help
+              as much as you think.
             </p>
             <Link
               href={`/day/${student.currentDay}?state=${scenario}`}
               className="mt-4 block rounded-xl bg-blue px-4 py-3.5 text-center text-[15px] font-semibold text-white press"
             >
-              Go to tonight, day {student.currentDay}
+              Back to tonight, day {student.currentDay}
             </Link>
           </div>
         ) : (
@@ -167,6 +168,8 @@ export default function ChallengeDayPage({ params, searchParams }) {
         {(state === "today" || state === "dark") && (
           <ProofForm
             dayNumber={day.day}
+            total={total}
+            scenario={scenario}
             drafts={drafts}
             shields={student.shields}
           />

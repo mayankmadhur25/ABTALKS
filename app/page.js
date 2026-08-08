@@ -61,7 +61,7 @@ export default function LandingPage() {
             <p className="font-mono text-[10px] uppercase tracking-widest text-ink-faint">
               Cohort {prev.number} · live right now
             </p>
-            <p className="font-mono text-[10px] font-medium uppercase tracking-widest text-pink">
+            <p className="font-mono text-[10px] font-medium uppercase tracking-widest text-pink-deep">
               Day {prev.currentDay}
             </p>
           </div>
@@ -132,7 +132,7 @@ export default function LandingPage() {
             >
               <span
                 className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg font-mono text-[13px] font-medium tabular ${
-                  track.seatsLeft <= 2 ? "bg-pink text-white" : "bg-paper text-ink"
+                  track.seatsLeft <= 2 ? "bg-pink-deep text-white" : "bg-paper text-ink"
                 }`}
               >
                 {track.seatsLeft}

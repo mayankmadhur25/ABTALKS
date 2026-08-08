@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Pill } from "@/components/AppBar";
 
 /*
@@ -14,9 +15,14 @@ import { Pill } from "@/components/AppBar";
  */
 
 const GITHUB = /^https?:\/\/(www\.)?github\.com\/[^/]+\/[^/]+/i;
-const LINKEDIN = /^https?:\/\/(www\.)?linkedin\.com\/.+/i;
+/*
+ * A LinkedIn profile URL is not a post. The challenge asks for proof of work,
+ * so the link has to point at something published: a post, or a feed update.
+ */
+const LINKEDIN =
+  /^https?:\/\/([a-z]{2,3}\.)?linkedin\.com\/(posts\/|feed\/update\/|pulse\/)/i;
 
-export default function ProofForm({ dayNumber, drafts, shields }) {
+export default function ProofForm({ dayNumber, total, scenario, drafts, shields }) {
   const [repo, setRepo] = useState("");
   const [post, setPost] = useState("");
   const [draft, setDraft] = useState(drafts[0]);
@@ -51,12 +57,19 @@ export default function ProofForm({ dayNumber, drafts, shields }) {
           Shipped just now
         </p>
         <h2 className="mt-2 font-display text-[19px] font-bold tracking-tight">
-          Day {dayNumber} is done.
+          {dayNumber === total ? "That was night sixty." : `Day ${dayNumber} is done.`}
         </h2>
         <p className="mt-2 text-[13.5px] leading-relaxed opacity-90">
-          Both proofs landed. Day {dayNumber + 1} unlocks at 5:00 AM. Go to
-          sleep.
+          {dayNumber === total
+            ? "Sixty nights, sixty things you built. Your build log is public from now on."
+            : `Both proofs landed. Day ${dayNumber + 1} unlocks at 5:00 AM. Go to sleep.`}
         </p>
+        <Link
+          href="/dashboard?state=shipped"
+          className="mt-4 block rounded-xl border-[1.5px] border-white px-4 py-3 text-center text-[14px] font-semibold text-white"
+        >
+          {dayNumber === total ? "See all sixty" : "Back to your dashboard"}
+        </Link>
       </div>
     );
   }
@@ -117,7 +130,7 @@ export default function ProofForm({ dayNumber, drafts, shields }) {
         <div className="flex items-baseline justify-between gap-3">
           <p className="eyebrow">Proof 2 · the post</p>
           <Pill tone={post === "" ? "plain" : postOk ? "green" : "pink"}>
-            {post === "" ? "Waiting" : postOk ? "Valid link" : "Not LinkedIn"}
+            {post === "" ? "Waiting" : postOk ? "Valid link" : "Not a post link"}
           </Pill>
         </div>
 
@@ -163,10 +176,20 @@ export default function ProofForm({ dayNumber, drafts, shields }) {
           inputMode="url"
           value={post}
           onChange={(e) => setPost(e.target.value)}
-          placeholder="https://linkedin.com/posts/..."
+          placeholder="https://linkedin.com/posts/your-post-id"
+          aria-describedby="post-help"
           aria-invalid={post !== "" && !postOk}
           className="w-full rounded-xl border-[1.5px] border-ink bg-card p-3 font-mono text-[12.5px]"
         />
+        <p
+          id="post-help"
+          aria-live="polite"
+          className="mt-2 text-[12.5px] leading-relaxed text-ink-soft"
+        >
+          {post !== "" && !postOk
+            ? "That looks like a profile, not a post. Open the post itself and copy the link from there."
+            : "The link to the post, not to your profile."}
+        </p>
       </div>
 
       <p className="mt-3.5 text-[12.5px] leading-relaxed text-ink-soft">
