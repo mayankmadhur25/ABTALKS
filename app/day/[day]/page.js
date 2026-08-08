@@ -38,7 +38,7 @@ export default function ChallengeDayPage({ params, searchParams }) {
   const drafts = [0, 1, 2].map((v) => composePost(day, v, total));
 
   return (
-    <main className="pb-4">
+    <main id="content" className="pb-4">
       <AppBar
         back={`/dashboard?state=${scenario}`}
         title={`Day ${day.day}`}

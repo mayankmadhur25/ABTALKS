@@ -34,6 +34,9 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="min-h-screen antialiased">
+        <a className="skip" href="#content">
+          Skip to content
+        </a>
         <div className="mx-auto w-full max-w-[420px] bg-paper">{children}</div>
       </body>
     </html>

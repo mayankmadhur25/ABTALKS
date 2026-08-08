@@ -51,7 +51,7 @@ export default function DashboardPage({ searchParams }) {
         : "nights lit in a row";
 
   return (
-    <main className="pb-4">
+    <main id="content" className="pb-4">
       <AppBar
         right={
           <>
@@ -133,7 +133,7 @@ export default function DashboardPage({ searchParams }) {
 
         {/* Tonight, or the closed day. Never both, never neither. */}
         {student.todayShipped ? (
-          <div className="mt-3 rounded-2xl border-2 border-ink bg-green p-5 text-white">
+          <div className="mt-3 rounded-2xl border-2 border-ink bg-green-deep p-5 text-white">
             <p className="font-mono text-[10px] uppercase tracking-widest">
               Shipped {student.shippedAt}
             </p>
@@ -198,12 +198,16 @@ export default function DashboardPage({ searchParams }) {
               key={label}
               className="rounded-xl border-[1.5px] border-ink bg-card p-3.5"
             >
+              <dt className="sr-only">{label}</dt>
               <dd className="font-mono text-[21px] font-medium leading-none tracking-tight tabular">
                 {value}
               </dd>
-              <dt className="mt-2 font-mono text-[9.5px] uppercase tracking-widest text-ink-faint">
+              <dd
+                aria-hidden="true"
+                className="mt-2 font-mono text-[9.5px] uppercase tracking-widest text-ink-faint"
+              >
                 {label}
-              </dt>
+              </dd>
             </div>
           ))}
         </dl>

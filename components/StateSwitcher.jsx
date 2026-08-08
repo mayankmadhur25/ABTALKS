@@ -22,7 +22,7 @@ export default function StateSwitcher({ current, base }) {
               <Link
                 href={`${base}?state=${key}`}
                 aria-current={active ? "true" : undefined}
-                className={`block rounded-full border-[1.5px] border-ink px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider ${
+                className={`block rounded-full border-[1.5px] border-ink px-3 py-2 font-mono text-[10px] uppercase tracking-wider ${
                   active ? "bg-ink text-white" : "bg-card text-ink"
                 }`}
               >

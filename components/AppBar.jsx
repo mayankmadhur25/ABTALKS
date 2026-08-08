@@ -32,8 +32,8 @@ export function Pill({ children, tone = "plain" }) {
     plain: "bg-card text-ink",
     yellow: "bg-yellow text-ink",
     blue: "bg-blue text-white",
-    pink: "bg-pink text-white",
-    green: "bg-green text-white",
+    pink: "bg-pink-deep text-white",
+    green: "bg-green-deep text-white",
   };
   return (
     <span

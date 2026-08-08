@@ -46,7 +46,7 @@ export default function ProofForm({ dayNumber, drafts, shields }) {
 
   if (shipped) {
     return (
-      <div className="mt-5 rounded-2xl border-2 border-ink bg-green p-5 text-white">
+      <div className="mt-5 rounded-2xl border-2 border-ink bg-green-deep p-5 text-white">
         <p className="font-mono text-[10px] uppercase tracking-widest">
           Shipped just now
         </p>
@@ -74,6 +74,11 @@ export default function ProofForm({ dayNumber, drafts, shields }) {
       <p className="mt-2 text-[13.5px] leading-relaxed text-ink-soft">
         Both go public. That is the whole mechanism.
       </p>
+      <p aria-live="polite" className="sr-only">
+        {ready
+          ? "Both proofs verified. Ready to ship."
+          : `${(repoOk ? 1 : 0) + (postOk ? 1 : 0)} of 2 proofs verified.`}
+      </p>
 
       <div className="mt-4 rounded-2xl border-2 border-ink bg-card p-5">
         <div className="flex items-baseline justify-between gap-3">
@@ -93,9 +98,15 @@ export default function ProofForm({ dayNumber, drafts, shields }) {
           value={repo}
           onChange={(e) => setRepo(e.target.value)}
           placeholder="https://github.com/you/day12-profilecard"
+          aria-describedby="repo-help"
+          aria-invalid={repo !== "" && !repoOk}
           className="w-full rounded-xl border-[1.5px] border-ink bg-card p-3 font-mono text-[12.5px]"
         />
-        <p className="mt-2 text-[12.5px] leading-relaxed text-ink-soft">
+        <p
+          id="repo-help"
+          aria-live="polite"
+          className="mt-2 text-[12.5px] leading-relaxed text-ink-soft"
+        >
           {repo !== "" && !repoOk
             ? "That is not a GitHub URL. It should start with github.com/your-username/"
             : "Paste it straight from the address bar. We check the commit exists and was pushed today."}
@@ -153,6 +164,7 @@ export default function ProofForm({ dayNumber, drafts, shields }) {
           value={post}
           onChange={(e) => setPost(e.target.value)}
           placeholder="https://linkedin.com/posts/..."
+          aria-invalid={post !== "" && !postOk}
           className="w-full rounded-xl border-[1.5px] border-ink bg-card p-3 font-mono text-[12.5px]"
         />
       </div>

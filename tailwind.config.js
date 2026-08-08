@@ -13,8 +13,10 @@ module.exports = {
         blue: "var(--blue)",
         "blue-deep": "var(--blue-deep)",
         pink: "var(--pink)",
+        "pink-deep": "var(--pink-deep)",
         yellow: "var(--yellow)",
         green: "var(--green)",
+        "green-deep": "var(--green-deep)",
       },
       fontFamily: {
         display: ["Unbounded", "system-ui", "sans-serif"],

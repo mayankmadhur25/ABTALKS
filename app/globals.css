@@ -24,16 +24,18 @@
 
   --ink: #16161f;
   --ink-soft: #5a5b6a;
-  --ink-faint: #9a9bab;
+  --ink-faint: #676976;
   --line: #e3e3dd;
 
   --blue: #2b4bff;
   --blue-deep: #1c33bd;
   --pink: #ff3d8b;
+  --pink-deep: #d1146a;
   --yellow: #ffd23f;
-  --green: #00b87c;
+  --green: #0a8f63;
+  --green-deep: #057a52;
 
-  --ahead: #d8d8d2;
+  --ahead: #c4c4be;
 }
 
 @layer base {
@@ -56,6 +58,35 @@
 }
 
 @layer components {
+  /* Keyboard users should not have to tab through the whole header. */
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+  }
+  .skip:focus {
+    left: 8px;
+    top: 8px;
+    background: var(--ink);
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
   /*
    * The hard offset shadow is the signature texture: a printed sticker
    * sitting slightly off the page. Used only on things you can act on, so

@@ -28,7 +28,7 @@ export default function LandingPage() {
   const total = getTotalDays();
 
   return (
-    <main className="pb-4">
+    <main id="content" className="pb-4">
       <header className="flex items-center justify-between border-b-[1.5px] border-ink px-5 py-3.5">
         <span className="font-display text-[15px] font-extrabold tracking-tight">
           AB<span className="text-blue">Talks</span>
