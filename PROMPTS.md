@@ -378,3 +378,49 @@ Node.js installer on my machine, so I could not run `npm run dev` or
 `npm run build` locally at any point. Every commit was verified by the Vercel
 production build instead, which runs the same install and build steps. This is
 why the workflow is zip, copy, GitHub Desktop, watch the deploy.
+
+---
+
+## Review pass four: the missed-day state
+
+**What triggered it:** I opened the missed-day preview on the deployed site
+and could not tell it apart from the on-streak one. The pill still read
+Tonight, the task was identical, the shield note was identical. The only
+difference was a three-pixel dark mark in the tally strip, which is invisible
+at a glance on a phone.
+
+My first read was that the state was not propagating at all. That turned out
+to be wrong, and the reason is worth writing down: in the missed scenario the
+current day is 12 and the dark night is 11, so `/day/12?state=missed`
+correctly renders a normal open night. Day 12 has not gone dark. I had been
+looking at the wrong route. The dark treatment on `/day/11?state=missed`
+already worked.
+
+Three real problems came out of the pass anyway.
+
+**Shield copy contradicted itself on the repair screen.** The note under the
+draft box was one sentence for every state. On the repair screen it sat
+directly under the black card announcing the night went dark, and directly
+above a button reading "Repair Day 11 · 1 shield". Three elements, three
+different tenses. The note now reads `isRepair` and says what the repair
+actually costs.
+
+**The preview switcher was lying about where it goes.** It kept the current
+day and swapped only the query string, so clicking "Day 1, no streak" from
+day 12 landed on `/day/12?state=fresh`, which is locked in that scenario. The
+label promised day one and the link delivered a sealed screen. Added a
+`dayScoped` prop so each scenario resolves to its own current day. The
+dashboard has no day in its path, so its usage is unchanged.
+
+**The dark night was only visible on the dashboard.** A student deep-linking
+into tonight could work the whole task without ever learning day 11 was still
+open. Added a link under the task intro, shown on any day except the dark one
+itself, since that one already carries its own inverted card.
+
+**Committed as one change** rather than three, because I found and fixed them
+in a single sitting and splitting them afterwards would have been a fiction
+about how the work happened.
+
+**Still unverified locally:** the Node.js constraint recorded above still
+applies, so this pass was checked by reading the render path and by the
+Vercel production build, not by `npm run dev`.
