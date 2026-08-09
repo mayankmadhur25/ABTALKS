@@ -72,6 +72,29 @@ export default function ChallengeDayPage({ params, searchParams }) {
           {day.why}
         </p>
 
+        {/*
+         * A dark night is the student's most urgent fact, and until now it
+         * only appeared on the dashboard. Someone who deep-links into tonight
+         * would work the whole task without ever learning day 11 is still
+         * open. Shown on any day except the dark one itself, which already
+         * carries its own inverted card below.
+         */}
+        {student.missedDays.length > 0 &&
+          !student.missedDays.includes(day.day) && (
+            <Link
+              href={`/day/${student.missedDays[0]}?state=${scenario}`}
+              className="mt-4 flex items-baseline justify-between gap-3 rounded-2xl border-2 border-ink bg-card px-4 py-3.5 press"
+            >
+              <span className="text-[13.5px] leading-snug">
+                Day {student.missedDays[0]} went dark. It can still be
+                repaired tonight.
+              </span>
+              <span aria-hidden="true" className="text-[15px] font-semibold">
+                →
+              </span>
+            </Link>
+          )}
+
         {state === "locked" ? (
           <div className="mt-6 rounded-2xl border-2 border-dashed border-ink-faint p-5">
             <h2 className="font-display text-[16px] font-bold tracking-tight">
@@ -178,7 +201,7 @@ export default function ChallengeDayPage({ params, searchParams }) {
         )}
       </div>
 
-      <StateSwitcher current={scenario} base={`/day/${day.day}`} />
+      <StateSwitcher current={scenario} base="/day" dayScoped />
     </main>
   );
 }
