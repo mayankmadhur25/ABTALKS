@@ -194,7 +194,7 @@ export default function ProofForm({
           rows={9}
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
-          className="w-full rounded-xl border-[1.5px] border-ink bg-card p-3 font-mono text-[12.5px] leading-relaxed"
+          className="w-full rounded-xl border-[1.5px] border-ink bg-card px-3 py-3.5 font-mono text-[12.5px] leading-relaxed"
         />
 
         <div className="mt-2.5 grid grid-cols-2 gap-2">
@@ -240,9 +240,17 @@ export default function ProofForm({
       </div>
 
       <p className="mt-3.5 text-[12.5px] leading-relaxed text-ink-soft">
-        {shields === 0
-          ? "No shields yet. Ship 7 nights in a row and you earn one. A shield holds your streak through a night that goes wrong."
-          : `You have ${shields} ${shields === 1 ? "shield" : "shields"}. If tonight goes dark, a shield holds the streak until tomorrow's 2:00 AM deadline. You earn one every 7 nights shipped.`}
+        {/*
+         * The note has to match the night you are standing in. On a repair the
+         * dark night already happened and a shield is about to be spent, so a
+         * sentence about what a shield would do if tonight went wrong reads as
+         * a contradiction of the black card directly above it.
+         */}
+        {isRepair
+          ? `Repairing this night spends 1 shield, leaving you ${Math.max(shields - 1, 0)}. Day ${currentDay} is still open, and it has to land before 2:00 AM for the streak to close.`
+          : shields === 0
+            ? "No shields yet. Ship 7 nights in a row and you earn one. A shield holds your streak through a night that goes wrong."
+            : `You have ${shields} ${shields === 1 ? "shield" : "shields"}. If tonight goes dark, a shield holds the streak until tomorrow's 2:00 AM deadline. You earn one every 7 nights shipped.`}
       </p>
 
       <div className="sticky bottom-0 z-20 -mx-5 mt-6 border-t-[1.5px] border-ink bg-paper px-5 pb-5 pt-4">
@@ -271,3 +279,4 @@ export default function ProofForm({
     </>
   );
 }
+
